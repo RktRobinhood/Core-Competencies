@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Implementation Science for School Change — Developing Learners, Developing Individuals</title>
   <link rel="stylesheet" href="style.css">
+  <script src="search-index.js"></script>
 </head>
 <body>
 
@@ -229,7 +230,7 @@
     </article>
     <footer class="page-footer">
       <p>Part of <em>Developing Learners, Developing Individuals</em> · A Research Foundation for Expanding IB Theory of Knowledge</p>
-      <p class="build-time">Last built: 2026-03-12 19:01</p>
+      <p class="build-time">Last built: 2026-03-12 19:11</p>
     </footer>
   </main>
 </div>
@@ -273,26 +274,18 @@
   });
 
   // ── Search (full-text across all chapters) ─────────────────────────────────
+  // Index is loaded synchronously via <script src="search-index.js"> in <head>,
+  // so window.SEARCH_INDEX is always available — no fetch, works with file://
   const searchInput   = document.getElementById('sidebarSearch');
   const searchResults = document.getElementById('searchResults');
   const partsDiv      = document.getElementById('sidebarParts');
-  let   searchIndex   = null;
 
-  function loadIndex() {
-    if (searchIndex !== null) return Promise.resolve();
-    return fetch('search-index.json')
-      .then(r => r.json())
-      .then(d => { searchIndex = d; })
-      .catch(() => { searchIndex = []; });
-  }
-
-  // Case-insensitive highlight without regex (avoids backslash escaping issues)
   function highlight(text, query) {
     if (!query || !text) return text || '';
     const lower = text.toLowerCase();
     const qLow  = query.toLowerCase();
     const qLen  = query.length;
-    let result  = '';
+    let result = '';
     let i = 0;
     while (i < text.length) {
       const idx = lower.indexOf(qLow, i);
@@ -303,15 +296,28 @@
     return result;
   }
 
-  // Find a short excerpt from body text surrounding the first match
   function excerpt(body, query) {
     if (!body || !query) return '';
     const idx = body.toLowerCase().indexOf(query.toLowerCase());
     if (idx === -1) return '';
     const start = Math.max(0, idx - 40);
     const end   = Math.min(body.length, idx + 100);
-    const snip  = (start > 0 ? '…' : '') + body.slice(start, end) + (end < body.length ? '…' : '');
-    return highlight(snip, query);
+    return (start > 0 ? '…' : '') + highlight(body.slice(start, end), query) + '…';
+  }
+
+  // Find the first section in an item whose text or heading contains the query word
+  function findSection(item, word) {
+    if (!item.sections) return null;
+    return item.sections.find(function(s) {
+      return s.text.toLowerCase().indexOf(word) !== -1
+          || s.heading.toLowerCase().indexOf(word) !== -1;
+    }) || null;
+  }
+
+  // Build a deep link: page.html?q=term#section-id
+  function deepLink(item, q, section) {
+    const qEnc = encodeURIComponent(q);
+    return item.href + '?q=' + qEnc + (section ? '#' + section.id : '');
   }
 
   function renderResults(query) {
@@ -324,16 +330,16 @@
     partsDiv.hidden = true;
     searchResults.hidden = false;
 
-    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    const index = window.SEARCH_INDEX || [];
+    const words = q.toLowerCase().split(' ').filter(function(w) { return w.length > 0; });
 
-    const hits = (searchIndex || []).filter(item => {
-      // Search across title, summary, tags AND full body text
-      const blob = [
-        item.title, item.summary, item.part,
-        (item.tags || []).join(' '),
-        item.body || ''
-      ].join(' ').toLowerCase();
-      return words.every(w => blob.includes(w));
+    const hits = index.filter(function(item) {
+      const sectionText = (item.sections || []).map(function(s) {
+        return s.heading + ' ' + s.text;
+      }).join(' ');
+      const blob = [item.title, item.summary, item.part,
+                    (item.tags || []).join(' '), sectionText].join(' ').toLowerCase();
+      return words.every(function(w) { return blob.indexOf(w) !== -1; });
     }).slice(0, 15);
 
     if (hits.length === 0) {
@@ -341,38 +347,100 @@
       return;
     }
 
-    // Use the first search word for excerpts (most specific)
     const firstWord = words[0];
-
-    searchResults.innerHTML = hits.map(item => {
+    searchResults.innerHTML = hits.map(function(item) {
+      const section   = findSection(item, firstWord);
+      const href      = deepLink(item, q, section);
       const titleHtml = highlight(item.title, q);
       const tags = (item.tags || []).slice(0, 3)
-        .map(t => '<span class="search-tag">' + t + '</span>').join('');
+        .map(function(t) { return '<span class="search-tag">' + t + '</span>'; }).join('');
 
-      // Show body excerpt if the match is in body (not title/summary)
-      const titleMatch = item.title.toLowerCase().includes(firstWord);
-      const summaryMatch = (item.summary || '').toLowerCase().includes(firstWord);
-      let snippetHtml = '';
-      if (!titleMatch && !summaryMatch && item.body) {
-        snippetHtml = '<span class="search-summary">' + excerpt(item.body, firstWord) + '</span>';
+      // Snippet: prefer section heading + excerpt, fall back to summary
+      let snip = '';
+      if (section) {
+        const secLabel = '<span class="search-section">§ ' + highlight(section.heading, q) + '</span>';
+        const inHeading = section.heading.toLowerCase().indexOf(firstWord) !== -1;
+        snip = secLabel + (inHeading ? '' : '<span class="search-summary">' + excerpt(section.text, firstWord) + '</span>');
       } else if (item.summary) {
-        snippetHtml = '<span class="search-summary">' + highlight(item.summary.slice(0, 100), q) + '…</span>';
+        snip = '<span class="search-summary">' + highlight(item.summary.slice(0, 110), q) + '…</span>';
       }
 
-      return '<li><a href="' + item.href + '">'
-           + '<span class="search-title">' + titleHtml + '</span>'
-           + tags + snippetHtml
-           + '</a></li>';
+      return '<li><a href="' + href + '"><span class="search-title">' + titleHtml + '</span>' + tags + snip + '</a></li>';
     }).join('');
   }
 
   if (searchInput) {
-    searchInput.addEventListener('focus', loadIndex);
-    searchInput.addEventListener('input', e => loadIndex().then(() => renderResults(e.target.value)));
-    searchInput.addEventListener('keydown', e => {
+    searchInput.addEventListener('input', function(e) { renderResults(e.target.value); });
+    searchInput.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') { searchInput.value = ''; renderResults(''); searchInput.blur(); }
     });
   }
+
+  // ── Arrival highlight: light up matched text when coming from search ──────
+  (function arrivalHighlight() {
+    const q = new URLSearchParams(location.search).get('q');
+    if (!q) return;
+
+    const article = document.querySelector('article');
+    if (!article) return;
+
+    const marks = [];
+
+    function walkNode(node) {
+      if (node.nodeType === 3) {
+        const text  = node.textContent;
+        const lower = text.toLowerCase();
+        const qLow  = q.toLowerCase();
+        const qLen  = q.length;
+        let i = 0;
+        const frags = [];
+        while (i < text.length) {
+          const idx = lower.indexOf(qLow, i);
+          if (idx === -1) { frags.push(document.createTextNode(text.slice(i))); break; }
+          if (idx > i) frags.push(document.createTextNode(text.slice(i, idx)));
+          const m = document.createElement('mark');
+          m.className = 'arrival-hl';
+          m.textContent = text.slice(idx, idx + qLen);
+          frags.push(m);
+          marks.push(m);
+          i = idx + qLen;
+        }
+        if (frags.length > 1) {
+          const parent = node.parentNode;
+          frags.forEach(function(f) { parent.insertBefore(f, node); });
+          parent.removeChild(node);
+        }
+      } else if (node.nodeType === 1
+          && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE'
+          && node.tagName !== 'MARK'  && node.tagName !== 'A') {
+        Array.from(node.childNodes).forEach(walkNode);
+      }
+    }
+
+    walkNode(article);
+
+    // Scroll the first match into view (if we didn't land on a hash)
+    if (marks.length > 0 && !location.hash) {
+      marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Fade out after 4 s, then remove the <mark> nodes cleanly
+    setTimeout(function() {
+      marks.forEach(function(m) {
+        m.style.transition = 'background 1.5s, color 1.5s';
+        m.style.background = 'transparent';
+        m.style.color = 'inherit';
+      });
+      setTimeout(function() {
+        marks.forEach(function(m) {
+          if (m.parentNode) {
+            m.parentNode.insertBefore(document.createTextNode(m.textContent), m);
+            m.parentNode.removeChild(m);
+          }
+        });
+      }, 1600);
+    }, 4000);
+  })();
 
   // ── Inline section nav (only for the active chapter) ──────────────────────
   (function buildInlineSectionNav() {
