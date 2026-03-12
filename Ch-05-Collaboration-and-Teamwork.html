@@ -8,14 +8,23 @@
 </head>
 <body>
 
-<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+<!-- Mobile hamburger -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open navigation">
   <span></span><span></span><span></span>
 </button>
 
-<div class="layout">
+<!-- Desktop sidebar collapse tab -->
+<button class="sidebar-collapser" id="sidebarCollapser" aria-label="Toggle sidebar">
+  <span class="collapser-icon">&#8249;</span>
+</button>
+
+<div class="layout" id="layout">
   <aside class="sidebar" id="sidebar">
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" id="sidebarNav">
 <a class="sidebar-brand" href="00-Table-of-Contents.html"><span>Developing Learners, Developing Individuals</span></a>
+<div class="sidebar-search"><input type="search" id="sidebarSearch" placeholder="Search chapters…" autocomplete="off" spellcheck="false"></div>
+<ul class="search-results" id="searchResults" hidden></ul>
+<div id="sidebarParts">
 <details class="part-group">
   <summary class="part-title">Part I — The Case for Change</summary>
   <ul class="chapter-list">
@@ -97,6 +106,7 @@
     <li><a href="A4-Exhibition-Object-Ideas.html">A4 — Exhibition Object Ideas</a></li>
   </ul>
 </details>
+</div>
 </nav>
   </aside>
 
@@ -168,39 +178,206 @@
     </article>
     <footer class="page-footer">
       <p>Part of <em>Developing Learners, Developing Individuals</em> · A Research Foundation for Expanding IB Theory of Knowledge</p>
-      <p class="build-time">Last built: 2026-03-12 14:32</p>
+      <p class="build-time">Last built: 2026-03-12 19:01</p>
     </footer>
   </main>
 </div>
 
 <script>
-  // Sidebar toggle
-  const toggle = document.getElementById('sidebarToggle');
-  const sidebar = document.getElementById('sidebar');
-  const STORAGE_KEY = 'sidebar-open';
+(function () {
+  'use strict';
 
-  function setSidebar(open) {
-    sidebar.classList.toggle('open', open);
-    toggle.classList.toggle('active', open);
+  // ── Desktop collapse ───────────────────────────────────────────────────────
+  const layout    = document.getElementById('layout');
+  const collapser = document.getElementById('sidebarCollapser');
+  const sidebar   = document.getElementById('sidebar');
+  const mobToggle = document.getElementById('sidebarToggle');
+  const SK_DESK   = 'sidebar-desktop-open';
+
+  function setDesktopSidebar(open) {
+    layout.classList.toggle('sidebar-collapsed', !open);
+    collapser.querySelector('.collapser-icon').innerHTML = open ? '&#8249;' : '&#8250;';
+    collapser.setAttribute('aria-label', open ? 'Collapse sidebar' : 'Expand sidebar');
+    try { sessionStorage.setItem(SK_DESK, open ? '1' : '0'); } catch(e) {}
   }
 
-  toggle.addEventListener('click', () => {
-    const willOpen = !sidebar.classList.contains('open');
-    setSidebar(willOpen);
-    try { sessionStorage.setItem(STORAGE_KEY, willOpen ? '1' : '0'); } catch(e) {}
+  collapser.addEventListener('click', () => setDesktopSidebar(layout.classList.contains('sidebar-collapsed')));
+
+  try { setDesktopSidebar(sessionStorage.getItem(SK_DESK) !== '0'); }
+  catch(e) { setDesktopSidebar(true); }
+
+  // ── Mobile sidebar ─────────────────────────────────────────────────────────
+  mobToggle.addEventListener('click', () => {
+    const open = !sidebar.classList.contains('mobile-open');
+    sidebar.classList.toggle('mobile-open', open);
+    mobToggle.classList.toggle('active', open);
   });
 
-  // Restore state
-  try {
-    const stored = sessionStorage.getItem(STORAGE_KEY);
-    if (stored === '0') { setSidebar(false); }
-    else { setSidebar(true); }
-  } catch(e) { setSidebar(true); }
-
-  // Highlight current section in sidebar
-  document.querySelectorAll('.sidebar-nav details').forEach(details => {
-    if (details.querySelector('a.active')) details.open = true;
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth < 900 && sidebar.classList.contains('mobile-open')
+        && !sidebar.contains(e.target) && e.target !== mobToggle) {
+      sidebar.classList.remove('mobile-open');
+      mobToggle.classList.remove('active');
+    }
   });
+
+  // ── Search (full-text across all chapters) ─────────────────────────────────
+  const searchInput   = document.getElementById('sidebarSearch');
+  const searchResults = document.getElementById('searchResults');
+  const partsDiv      = document.getElementById('sidebarParts');
+  let   searchIndex   = null;
+
+  function loadIndex() {
+    if (searchIndex !== null) return Promise.resolve();
+    return fetch('search-index.json')
+      .then(r => r.json())
+      .then(d => { searchIndex = d; })
+      .catch(() => { searchIndex = []; });
+  }
+
+  // Case-insensitive highlight without regex (avoids backslash escaping issues)
+  function highlight(text, query) {
+    if (!query || !text) return text || '';
+    const lower = text.toLowerCase();
+    const qLow  = query.toLowerCase();
+    const qLen  = query.length;
+    let result  = '';
+    let i = 0;
+    while (i < text.length) {
+      const idx = lower.indexOf(qLow, i);
+      if (idx === -1) { result += text.slice(i); break; }
+      result += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + qLen) + '</mark>';
+      i = idx + qLen;
+    }
+    return result;
+  }
+
+  // Find a short excerpt from body text surrounding the first match
+  function excerpt(body, query) {
+    if (!body || !query) return '';
+    const idx = body.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return '';
+    const start = Math.max(0, idx - 40);
+    const end   = Math.min(body.length, idx + 100);
+    const snip  = (start > 0 ? '…' : '') + body.slice(start, end) + (end < body.length ? '…' : '');
+    return highlight(snip, query);
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+    if (!q) {
+      searchResults.hidden = true;
+      partsDiv.hidden = false;
+      return;
+    }
+    partsDiv.hidden = true;
+    searchResults.hidden = false;
+
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+
+    const hits = (searchIndex || []).filter(item => {
+      // Search across title, summary, tags AND full body text
+      const blob = [
+        item.title, item.summary, item.part,
+        (item.tags || []).join(' '),
+        item.body || ''
+      ].join(' ').toLowerCase();
+      return words.every(w => blob.includes(w));
+    }).slice(0, 15);
+
+    if (hits.length === 0) {
+      searchResults.innerHTML = '<li class="search-no-results">No results found</li>';
+      return;
+    }
+
+    // Use the first search word for excerpts (most specific)
+    const firstWord = words[0];
+
+    searchResults.innerHTML = hits.map(item => {
+      const titleHtml = highlight(item.title, q);
+      const tags = (item.tags || []).slice(0, 3)
+        .map(t => '<span class="search-tag">' + t + '</span>').join('');
+
+      // Show body excerpt if the match is in body (not title/summary)
+      const titleMatch = item.title.toLowerCase().includes(firstWord);
+      const summaryMatch = (item.summary || '').toLowerCase().includes(firstWord);
+      let snippetHtml = '';
+      if (!titleMatch && !summaryMatch && item.body) {
+        snippetHtml = '<span class="search-summary">' + excerpt(item.body, firstWord) + '</span>';
+      } else if (item.summary) {
+        snippetHtml = '<span class="search-summary">' + highlight(item.summary.slice(0, 100), q) + '…</span>';
+      }
+
+      return '<li><a href="' + item.href + '">'
+           + '<span class="search-title">' + titleHtml + '</span>'
+           + tags + snippetHtml
+           + '</a></li>';
+    }).join('');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('focus', loadIndex);
+    searchInput.addEventListener('input', e => loadIndex().then(() => renderResults(e.target.value)));
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { searchInput.value = ''; renderResults(''); searchInput.blur(); }
+    });
+  }
+
+  // ── Inline section nav (only for the active chapter) ──────────────────────
+  (function buildInlineSectionNav() {
+    const article    = document.querySelector('article');
+    const activeLink = document.querySelector('.chapter-list a.active');
+    if (!article || !activeLink) return;
+
+    const headings = Array.from(article.querySelectorAll('h2, h3'));
+    if (headings.length < 2) return;
+
+    // Ensure IDs exist (python-markdown toc extension adds these, but just in case)
+    headings.forEach((h, i) => { if (!h.id) h.id = 'sec-' + i; });
+
+    // Build inline <ul> to insert after the active chapter link
+    const ul = document.createElement('ul');
+    ul.className = 'inline-section-nav';
+    ul.innerHTML = headings.map(h => {
+      const cls = h.tagName === 'H3' ? ' class="sec-h3"' : '';
+      return '<li' + cls + '><a class="sec-link" href="#' + h.id + '">' + h.textContent + '</a></li>';
+    }).join('');
+
+    // Insert right inside the active <li>, below the chapter link
+    activeLink.parentElement.appendChild(ul);
+
+    // Scrollspy — highlight current section in the inline nav
+    const links = ul.querySelectorAll('a.sec-link');
+    let activeId = null;
+
+    function setActive(id) {
+      if (id === activeId) return;
+      activeId = id;
+      links.forEach(a => a.classList.toggle('sec-active', a.getAttribute('href') === '#' + id));
+      // Scroll the active link into view within the sidebar
+      const activeA = ul.querySelector('a.sec-active');
+      if (activeA) activeA.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '0px 0px -65% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+
+    // Scroll fallback
+    let t;
+    window.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        let cur = headings[0];
+        headings.forEach(h => { if (h.getBoundingClientRect().top <= 80) cur = h; });
+        if (cur) setActive(cur.id);
+      }, 50);
+    }, { passive: true });
+  })();
+
+})();
 </script>
 </body>
 </html>
