@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dannelse and Character Formation — Developing Learners, Developing Individuals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="search-index.js"></script>
+</head>
+<body>
+
+<!-- Mobile hamburger -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Desktop sidebar collapse tab -->
+<button class="sidebar-collapser" id="sidebarCollapser" aria-label="Toggle sidebar">
+  <span class="collapser-icon">&#8249;</span>
+</button>
+
+<div class="layout" id="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" id="sidebarNav">
+<a class="sidebar-brand" href="00-Table-of-Contents.html"><span>Developing Learners, Developing Individuals</span></a>
+<div class="sidebar-search"><input type="search" id="sidebarSearch" placeholder="Search chapters…" autocomplete="off" spellcheck="false"></div>
+<ul class="search-results" id="searchResults" hidden></ul>
+<div id="sidebarParts">
+<details class="part-group">
+  <summary class="part-title">Part I — The Case for Change</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-I-Introduction.html">Part I Overview</a></li>
+    <li><a href="Ch-01-Introduction.html">Chapter 1 — Why Core Competencies Matter</a></li>
+    <li><a href="Ch-02-21st-Century-Skills-Landscape.html">Chapter 2 — The 21st-Century Skills Landscape</a></li>
+    <li><a href="Ch-03-Skills-at-Risk-in-a-Digital-Age.html">Chapter 3 — Skills at Risk in a Digital Age</a></li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part II — Core Competencies</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-II-Introduction.html">Part II Overview</a></li>
+    <li><a href="Ch-04-Critical-Thinking.html">Chapter 4 — Critical Thinking</a></li>
+    <li><a href="Ch-05-Collaboration-and-Teamwork.html">Chapter 5 — Collaboration & Teamwork</a></li>
+    <li><a href="Ch-06-Information-and-Digital-Literacy.html">Chapter 6 — Information & Digital Literacy</a></li>
+    <li><a href="Ch-07-Self-Directed-Learning.html">Chapter 7 — Self-Directed Learning</a></li>
+    <li><a href="Ch-08-Leadership-Communication-and-Global-Competence.html">Chapter 8 — Leadership, Communication & Global Competence</a></li>
+    <li><a href="Ch-09-Comparing-Competency-Frameworks.html">Chapter 9 — Comparing Competency Frameworks</a></li>
+    <li><a href="Ch-10-IB-Approaches-to-Learning.html">Chapter 10 — IB Approaches to Learning</a></li>
+    <li><a href="Ch-11-Creativity-and-Creative-Thinking.html">Chapter 11 — Creativity & Creative Thinking</a></li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part III — How Learning Works</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-III-Introduction.html">Part III Overview</a></li>
+    <li><a href="Ch-12-Memory-and-Levels-of-Processing.html">Chapter 12 — Memory & Levels of Processing</a></li>
+    <li><a href="Ch-13-Retrieval-Practice-and-Spaced-Learning.html">Chapter 13 — Retrieval Practice & Spaced Learning</a></li>
+    <li><a href="Ch-14-Cognitive-Load-and-Guided-Instruction.html">Chapter 14 — Cognitive Load & Guided Instruction</a></li>
+    <li><a href="Ch-15-Metacognition-and-Self-Regulation.html">Chapter 15 — Metacognition & Self-Regulation</a></li>
+    <li><a href="Ch-16-Growth-Mindset.html">Chapter 16 — Growth Mindset</a></li>
+    <li><a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Chapter 17 — Productive Struggle & Desirable Difficulties</a></li>
+    <li><a href="Ch-18-Learning-to-Learn.html">Chapter 18 — Learning to Learn: Every Student is a Teacher</a></li>
+    <li><a href="Ch-19-Motivation-Autonomy-and-the-Adult-Learner.html">Chapter 19 — Motivation, Autonomy & the Adult Learner</a></li>
+    <li><a href="Ch-20-The-Emotional-Learner-Wellbeing-Resilience-and-Grit.html">Chapter 20 — The Emotional Learner: Wellbeing, Resilience & Grit</a></li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part IV — Pedagogy in Practice</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-IV-Introduction.html">Part IV Overview</a></li>
+    <li><a href="Ch-21-Building-Thinking-Classrooms.html">Chapter 21 — Building Thinking Classrooms</a></li>
+    <li><a href="Ch-22-Principles-of-Effective-Instruction.html">Chapter 22 — Principles of Effective Instruction</a></li>
+    <li><a href="Ch-23-Teaching-Techniques-and-Thinking-Routines.html">Chapter 23 — Teaching Techniques & Thinking Routines</a></li>
+    <li><a href="Ch-24-Effective-Feedback.html">Chapter 24 — Effective Feedback</a></li>
+    <li><a href="Ch-25-Assessment-Literacy-Students-as-Assessment-Agents.html">Chapter 25 — Assessment Literacy: Students as Assessment Agents</a></li>
+    <li><a href="Ch-26-Teaching-Writing.html">Chapter 26 — Teaching Writing</a></li>
+    <li><a href="Ch-27-Project-Based-Learning.html">Chapter 27 — Project-Based Learning</a></li>
+    <li><a href="Ch-28-Reflective-Practice.html">Chapter 28 — Reflective Practice</a></li>
+  </ul>
+</details>
+<details class="part-group" open>
+  <summary class="part-title">Part V — The Danish Context</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-V-Introduction.html">Part V Overview</a></li>
+    <li><a href="Ch-29-Dannelse-and-Character-Formation.html" class="active">Chapter 29 — Dannelse & Character Formation</a></li>
+    <li><a href="Ch-30-Danish-Education-Reforms.html">Chapter 30 — Danish Education Reforms</a></li>
+    <li><a href="Ch-31-Case-Study-Silkeborg-Gymnasium.html">Chapter 31 — Case Study: Silkeborg Gymnasium</a></li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part VI — Implementation & the Future</summary>
+  <ul class="chapter-list">
+    <li><a href="_Part-VI-Introduction.html">Part VI Overview</a></li>
+    <li><a href="Ch-32-AI-in-Education.html">Chapter 32 — AI in Education</a></li>
+    <li><a href="Ch-33-Implementation-Science.html">Chapter 33 — Implementation Science</a></li>
+    <li><a href="Ch-34-Practical-Strategies-for-Schools.html">Chapter 34 — Practical Strategies for Schools</a></li>
+    <li><a href="Ch-35-Being-More-Human-in-an-AI-Age.html">Chapter 35 — Being More Human in an AI Age</a></li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Appendix — TOK Connections</summary>
+  <ul class="chapter-list">
+    <li><a href="_Appendix-Introduction.html">Appendix Overview</a></li>
+    <li><a href="A1-Curriculum-Hook-Map.html">A1 — Curriculum Hook Map</a></li>
+    <li><a href="A2-Pedagogical-Playbook.html">A2 — Pedagogical Playbook</a></li>
+    <li><a href="A3-Essay-Angles.html">A3 — Essay Angles</a></li>
+    <li><a href="A4-Exhibition-Object-Ideas.html">A4 — Exhibition Object Ideas</a></li>
+  </ul>
+</details>
+</div>
+</nav>
+  </aside>
+
+  <main class="content" id="main">
+    <article>
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="00-Table-of-Contents.html">Contents</a><span class="sep">›</span><span>Part V — The Danish Context</span></nav>
+      <h1 id="chapter-29-dannelse-and-character-formation">Chapter 29 — Dannelse and Character Formation</h1>
+<div class="callout callout-abstract"><div class="callout-title"><span class="callout-icon">◉</span> Overview</div><div class="callout-body"><p>Dannelse is far more than skills training or academic achievement. It is a philosophical tradition from Humboldt, Grundtvig, and Klafki that treats education as the formation of the whole person—intellectually, morally, socially, and civically. Understanding dannelse is essential for designing a course on core competencies in a Danish school, because it answers the deepest question: not just which skills matter, but why they matter and who learners are becoming through their education.</p></div></div>
+
+<hr />
+<h2 id="what-dannelse-means">What Dannelse Means</h2>
+<p>The Danish term <em>dannelse</em> resists precise translation. The closest English equivalents are "formation" or "character education," but these understate its scope. The German <em>Bildung</em>—from which dannelse derives—means the process of self-cultivation, self-realization, and integration into culture and society. In the Nordic tradition, dannelse encompasses five interrelated dimensions.</p>
+<p><strong>Self-formation</strong> addresses the development of understanding oneself: one's strengths, values, weaknesses, and potential. A student engaged in self-formation learns not only what they can do, but who they are becoming and what they care about. This goes beyond personality assessment or the popular VIA Character Strengths framework, though the latter is a useful tool. Self-formation is the deeper work of identity construction through reflection, challenge, and responsible decision-making.</p>
+<p><strong>Social formation</strong> involves learning to live well with others. It includes the cultivation of empathy, the ability to participate meaningfully in <em>fællesskab</em> (community), and the skills to navigate conflict and difference with respect. In a Danish school context, social formation is embedded in classroom structures—visibly random groups, collaborative projects, and deliberate attention to group dynamics—that require students to work across differences regularly.</p>
+<p><strong>Democratic formation</strong> develops informed, active citizens. It means understanding democratic values and processes, recognizing one's rights and responsibilities, and preparing to participate in civic life. The Danish Folkeskole Act explicitly names this: schools shall prepare pupils "to participate, demonstrate mutual responsibility and understand their rights and duties in a free and democratic society."</p>
+<p><strong>Cultural formation</strong> is engagement with heritage: language, history, literature, and the arts. It means developing the ability to appreciate, interpret, and contribute to cultural expression. In Denmark, this includes understanding Danish history and culture alongside respectful engagement with other cultural traditions.</p>
+<p><strong>Critical formation</strong> develops the capacity for independent, critical thought—the ability to question, analyze, and form reasoned judgments. This is not critical thinking in the narrow sense of logic puzzles; it is the formation of a critical consciousness that allows learners to evaluate claims, examine assumptions, and refuse passive reception of ideas.</p>
+<div class="callout callout-info"><div class="callout-title"><span class="callout-icon">ℹ</span> Key Concept — Dannelse</div><div class="callout-body"><p>Dannelse is the holistic formation of the person across intellectual, moral, social, civic, and cultural dimensions. It is grounded in the belief that education should develop self-determination (ability to direct one's own life), participation (ability to engage with others and society), and solidarity (commitment to justice and common good). Dannelse is not a set of skills to be checked off, but a continuous process of becoming a more thoughtful, capable, and responsible person.</p></div></div>
+
+<hr />
+<h2 id="dannelse-in-danish-law-and-educational-policy">Dannelse in Danish Law and Educational Policy</h2>
+<p>The philosophical concept of dannelse is not merely aspirational in Danish education. It is embedded in law and curriculum.</p>
+<p>The opening of the Folkeskole Act (<em>Folkeskoleloven</em>) states that the school shall, in cooperation with parents, "give the pupils knowledge and skills that prepare them for further education and give them the desire to learn more, familiarise them with Danish culture and history, give them an understanding of other countries and cultures, contribute to their understanding of man's interaction with nature, and promote the all-round development of the individual pupil" (UVM, Ministry of Children and Education). The phrase "all-round development" is a direct reference to dannelse.</p>
+<p>More explicitly, the Act requires that "The Folkeskole is to prepare the pupils to be able to participate, demonstrate mutual responsibility and understand their rights and duties in a free and democratic society." This is democratic formation as law.</p>
+<p>The Fælles Mål (Common Objectives) system, revised most recently in 2014, operationalizes dannelse by organizing learning around competency goals (<em>kompetencemål</em>) that embed formation within subject-specific learning. Each subject's goals include not just what students should know and be able to do, but how they should grow in judgment, values, and character. This is the bridge between philosophy and practice: dannelse becomes visible in the competencies students are expected to develop in Danish, Mathematics, Science, and every other subject.</p>
+<div class="callout callout-example"><div class="callout-title"><span class="callout-icon">»</span> In Practice</div><div class="callout-body"><p>In a Danish gymnasium classroom, a student studying Climate Literacy might develop knowledge about atmospheric science and carbon cycles. But within the dannelse framework, the same course also cultivates ethical formation (understanding responsibility to future generations), civic formation (engaging with climate policy and activism), and critical formation (evaluating competing claims about climate risk and response). The competency is not technical; it is the formation of a responsible citizen.</p></div></div>
+
+<hr />
+<h2 id="karakterdannelse-character-strengths-in-danish-context">Karakterdannelse: Character Strengths in Danish Context</h2>
+<p>In recent years, the term <em>karakterdannelse</em> (character formation) has gained prominence in Danish schools, partly through international influence and partly through adapted Danish research. The framework gaining most traction is the VIA Character Strengths model (Peterson &amp; Seligman, 2004), which identifies 24 strengths grouped under six virtues: wisdom, courage, humanity, justice, temperance, and transcendence.</p>
+<p>Danish researchers, notably Mette Marie Ledertoug at Aarhus University, have investigated strength-based learning (<em>styrkebaseret læring</em>) in Danish schools. Her doctoral research found that working with character strengths improved students' engagement, well-being, and academic motivation (Ledertoug, 2019). The Centre for Youth Research (CEFU) extended this work to vocational education, identifying seven key character strengths relevant to vocational success and adapted for the Danish context.</p>
+<p>What makes this relevant to competency education is that strengths are not fixed traits but developable capacities. A student strong in curiosity can grow in love of learning. A student with emerging leadership can develop through deliberate practice in collaborative settings. When dannelse meets character strengths, the result is a growth-oriented, asset-based approach to human development. Instead of asking "What is wrong with this student?" the dannelse framework asks "What strengths does this student have, and how can we help them grow?"</p>
+<p>The institutional home for much of this work in Denmark is the Center for Karakterdannelse (https://karakterdannelse.dk), a collaborative initiative built from the ground up with ten schools, supported by ten subject experts and ten professional organisations functioning as development centres for character education. Through its development programmes, teachers and educators are both trained in character education and contribute to developing professional understanding, character-building school culture, quality materials, and concrete tools for integrating <em>karakterdannelse</em> into daily school life. The Centre provides practical resources — including classroom tools (<em>værktøjer</em>) and research summaries (<em>viden</em>) — that bridge the gap between philosophical tradition and classroom implementation.</p>
+<p>Complementing this work on character is the research programme of Ane Qvortrup, which provides the empirical foundation that connects dannelse's philosophical aspirations to measurable outcomes in Danish classrooms. Given that Qvortrup's work directly informs the institutional context of this textbook project, the following section examines her contributions in depth.</p>
+<div class="callout callout-question"><div class="callout-title"><span class="callout-icon">?</span> For Reflection</div><div class="callout-body"><p>How does character strength language change the conversation in a school? If a teacher sees a student as "strong in bravery" or "developing persistence," rather than "disruptive" or "lazy," how does that shift the educational relationship and what becomes possible?</p></div></div>
+
+<hr />
+<h2 id="ane-qvortrup-the-empirical-foundation-for-dannelse-in-practice">Ane Qvortrup: The Empirical Foundation for Dannelse in Practice</h2>
+<p>Ane Qvortrup — Professor of Educational Research at the University of Southern Denmark and a leading figure in Danish secondary education research — provides a body of work that bridges the gap between dannelse as a philosophical tradition and dannelse as a set of actionable strategies for schools. Her research programme spans four interconnected domains: the TrivselsLUP study of student wellbeing, a systems-theoretical framework for understanding inclusion, a didactic theory of learning as both means and aims, and ongoing work on the study environment and student engagement. Together, these contributions offer the most comprehensive empirical grounding available for the kind of holistic, student-centred education that this textbook advocates.</p>
+<h3 id="trivselslup-three-dimensions-of-student-wellbeing">TrivselsLUP: Three Dimensions of Student Wellbeing</h3>
+<p>The TrivselsLUP study (<em>Trivsels- og Læringsundersøgelse i Praksis</em> — Wellbeing and Learning Survey in Practice), conducted by Qvortrup and Eva Lykkegaard at the Center for Secondary and Vocational Education Research in collaboration with the Praxis Foundation, is one of the largest and most systematic investigations of student wellbeing in Danish education. Across two annual rounds, the study surveyed more than 12,000 students at over 100 upper secondary institutions (<em>ungdomsuddannelser</em>) — including STX, HHX, HTX, HF, and EUX programmes — creating a dataset of remarkable breadth and depth (Qvortrup &amp; Lykkegaard, 2023).</p>
+<p>The study's central contribution is its differentiation of wellbeing into three distinct dimensions. <em>Personal wellbeing</em> (<em>personlig trivsel</em>) encompasses individuals' tendency to be satisfied with everyday life, experience life as good, feel confident, and think positively. <em>Social wellbeing</em> (<em>social trivsel</em>) refers to the experience of belonging to a social group or community where the individual's participation and engagement are recognised and valued. <em>Academic wellbeing</em> (<em>faglig trivsel</em>) — and this is where the study's findings become most significant for education — refers to the experience of feeling glad, motivated, and engaged in academic work.</p>
+<div class="callout callout-info"><div class="callout-title"><span class="callout-icon">ℹ</span> Key Concept — The Trivsel Gap</div><div class="callout-body"><p>The TrivselsLUP data reveals a striking asymmetry: while more than 80 per cent of Danish upper secondary students report high personal and social wellbeing (scoring just under 4 on a five-point scale), academic wellbeing consistently lags behind at 3.24. This <em>trivsel gap</em> — the difference between how well students feel socially and how well they feel about their learning — is the most actionable finding of the study. It means that a student may feel perfectly comfortable in school, have friends, and enjoy the social dimension of student life, yet simultaneously feel disengaged, unmotivated, or lost in their academic work. Schools that attend only to social wellbeing are addressing only part of the picture (Qvortrup &amp; Lykkegaard, 2023; 2024).</p></div></div>
+
+<p>The practical implications of this finding are profound. If academic wellbeing is a distinct dimension — not merely a by-product of social comfort — then it requires its own deliberate strategies. The TrivselsLUP research identifies several factors that predict higher academic wellbeing: students' <em>self-efficacy</em> (belief in their own ability to master academic tasks), the experience of <em>meaningful learning</em> (perceiving homework and classwork as connected to purposes the student values), the quality of <em>teacher-student relationships</em> (feeling that the teacher knows, cares about, and supports the individual student), and the student's <em>attitude toward academic challenge</em> (viewing difficulty as an expected part of learning rather than as evidence of inadequacy).</p>
+<p>These findings connect directly to the cognitive science explored in Part III of this textbook. Self-efficacy maps onto the growth mindset research in <a href="Ch-16-Growth-Mindset.html">Ch-16-Growth-Mindset</a>. Meaningful learning corresponds to the intrinsic motivation research in <a href="Ch-19-Motivation-Autonomy-and-the-Adult-Learner.html">Ch-19-Motivation-Autonomy-and-the-Adult-Learner</a>. Teacher-student relationships connect to the feedback research in <a href="Ch-24-Effective-Feedback.html">Ch-24-Effective-Feedback</a>. And the attitude toward academic challenge is precisely the construct explored in <a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Ch-17-Productive-Struggle-and-Desirable-Difficulties</a> — the understanding that difficulty is the mechanism of deep learning, not its enemy.</p>
+<div class="callout callout-example"><div class="callout-title"><span class="callout-icon">»</span> In Practice — Addressing the Trivsel Gap</div><div class="callout-body"><p>A gymnasium identifies through its annual wellbeing survey that students report high social wellbeing but low academic engagement. Rather than adding social activities, the school focuses on the academic dimension: teachers explicitly teach study strategies based on retrieval practice and spaced learning (see <a href="Ch-13-Retrieval-Practice-and-Spaced-Learning.html">Ch-13-Retrieval-Practice-and-Spaced-Learning</a>), reframe academic difficulty as productive struggle through classroom conversations about how learning works (see <a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Ch-17-Productive-Struggle-and-Desirable-Difficulties</a>), and restructure homework to make its purpose visible and connected to students' own questions. After one semester, students report increased feelings of competence and academic motivation — not because the work became easier, but because students understood why the difficulty mattered and felt supported in navigating it.</p></div></div>
+
+<h3 id="dimensions-of-inclusion-a-systems-theoretical-framework">Dimensions of Inclusion: A Systems-Theoretical Framework</h3>
+<p>Qvortrup's work on inclusion provides a second major contribution to educational practice. Drawing on Niklas Luhmann's social systems theory, Qvortrup and Qvortrup (2018) argue that the concept of inclusion in education has been insufficiently differentiated — that simply saying a student is "included" or "excluded" misses the complexity of how belonging actually works in school settings.</p>
+<p>Their framework identifies three analytical dimensions. The first dimension distinguishes <em>levels</em> of inclusion: a student may be physically present in a classroom (spatial inclusion), socially connected to peers (relational inclusion), and academically engaged with the learning (didactic inclusion) — or may be present at one level while excluded at another. The second dimension identifies <em>types of social communities</em> from which a student may be included or excluded: the class as an instructional unit, the informal peer community of the schoolyard, bilateral friendships, teacher-student relationships, and the wider school culture. The third dimension concerns <em>degrees</em> — inclusion is not binary but exists on a continuum, and a student's position on that continuum may differ across communities and over time.</p>
+<div class="callout callout-info"><div class="callout-title"><span class="callout-icon">ℹ</span> Key Concept — Qvortrup's Three Dimensions of Inclusion</div><div class="callout-body"><p>Inclusion in education is not a single state but a multi-dimensional phenomenon. A student may be <em>spatially</em> included (physically present in the classroom) but <em>relationally</em> excluded (lacking meaningful connections to peers) and <em>didactically</em> excluded (unable to access the learning at their level). Effective inclusive practice requires attending to all three dimensions and to the multiple social communities in which inclusion plays out — not just the classroom but the playground, the peer group, and the student-teacher relationship (Qvortrup &amp; Qvortrup, 2018).</p></div></div>
+
+<p>This framework directly supports the pedagogical approaches advocated throughout this textbook. Building Thinking Classrooms (<a href="Ch-21-Building-Thinking-Classrooms.html">Ch-21-Building-Thinking-Classrooms</a>) uses visibly random grouping precisely because it disrupts the fixed social hierarchies that produce relational exclusion. Collaborative learning structures (<a href="Ch-05-Collaboration-and-Teamwork.html">Ch-05-Collaboration-and-Teamwork</a>) create the conditions for didactic inclusion by ensuring that all students have access to the thinking. And the emphasis on scaffolded challenge throughout Part III ensures that productive struggle remains within the zone of proximal development — preventing didactic exclusion through tasks that are either too easy (producing disengagement) or too hard (producing helplessness).</p>
+<p>The connection to dannelse is explicit in Qvortrup's work: true inclusion is not merely about removing barriers to participation but about ensuring that every student can engage in the process of <em>formation</em> — developing intellectually, socially, ethically, and civically. A student who is spatially present but didactically excluded is not merely missing out on content; they are being denied the opportunity for dannelse.</p>
+<h3 id="learning-between-means-and-aims-qvortrups-didactic-theory">Learning Between Means and Aims: Qvortrup's Didactic Theory</h3>
+<p>Qvortrup's theoretical work on the nature of learning, developed most fully in <em>Dealing with Conceptualisations of Learning: Learning Between Means and Aims in Theory and Practice</em> (Qvortrup &amp; Wiberg, 2017), provides a framework for understanding the dual nature of learning in educational contexts.</p>
+<p>The core insight is that learning operates simultaneously as <em>means</em> and as <em>aim</em>. As a means, learning is a process — something that happens over time, with a beginning, a trajectory, and (potentially) a transformation. As an aim, learning is an outcome — a form of expertise, competence, or understanding that the process is directed toward. In educational settings, both the means and the aims have normative and instrumental dimensions: we care not only about <em>whether</em> students learn but about <em>how</em> they learn (the process matters, not just the product) and <em>why</em> they learn (the purpose extends beyond the immediate task to the student's formation as a person).</p>
+<p>This framework addresses a tension that runs through contemporary education: the pull between measurable learning outcomes (aims) and the quality of the learning process (means). When schools focus exclusively on aims — test scores, competency demonstrations, grades — they risk treating learning as an instrumental process that matters only for its end product. When they focus exclusively on means — the experience of learning, the emotional quality of the classroom, the process of exploration — they risk losing rigour and direction. Qvortrup's framework insists on holding both in view: the aims give learning direction and accountability; the means give learning depth and meaning.</p>
+<p>For the expanded TOK curriculum, this dual perspective is essential. The additional 50 hours are not merely aimed at producing measurable competency gains (though they should produce these). They are equally aimed at transforming the <em>process</em> of learning itself — developing students who approach learning differently, who understand how their own cognition works, and who experience academic work as meaningful engagement rather than compliance. Qvortrup's framework validates this approach: when means and aims are held together, learning becomes a vehicle for dannelse rather than a purely instrumental activity.</p>
+<h3 id="the-study-environment-and-student-engagement">The Study Environment and Student Engagement</h3>
+<p>Qvortrup's ongoing research programme at the Center for Secondary and Vocational Education Research (<em>Center for Gymnasie- og Erhvervsuddannelsesforskning</em>) extends her wellbeing work into a broader investigation of how study environments shape student engagement, retention, and development. Her research has examined how students' behaviours in the classroom can be understood as indicators of affective, behavioural, or cognitive engagement — or disengagement — depending on the instructional context (Qvortrup, SDU).</p>
+<p>This work connects to a critical practical question: how do we know when students are genuinely engaged in deep learning, and how do we distinguish genuine engagement from mere compliance? A student who appears busy — taking notes, completing tasks, sitting quietly — may be behaviourally engaged but cognitively disengaged. A student who appears restless or distracted may in fact be grappling with a genuinely difficult idea. Qvortrup's research reminds educators that engagement is multi-dimensional and context-dependent — the same behaviour can signify engagement or disengagement depending on what the student is being asked to do and how they experience the task.</p>
+<p>Her work also addresses the problem of <em>dropout</em> (<em>frafald</em>) in Danish upper secondary education — the phenomenon of students leaving their programme before completion. Qvortrup's research frames dropout not as a single event but as a process of progressive disengagement that unfolds across the three wellbeing dimensions: first academic wellbeing declines (the student feels lost in the work), then social wellbeing erodes (the student withdraws from peer relationships), and finally personal wellbeing suffers (the student no longer sees the point of being in school). This cascade model suggests that early intervention at the academic wellbeing level — helping students feel competent, connected to the material, and supported in their learning — may prevent the downstream social and personal consequences that ultimately lead to dropout.</p>
+<div class="callout callout-warning"><div class="callout-title"><span class="callout-icon">⚠</span> From Research to Practice — Qvortrup's Central Message</div><div class="callout-body"><p>Across all of her work, Qvortrup's central message to practitioners can be distilled to a single principle: <em>attend to the conditions of learning, not just its content</em>. Academic wellbeing is a condition of learning, not a luxury. Inclusion is a condition of learning, not an administrative category. The quality of the learning process is a condition of meaningful outcomes, not a separate concern. And the study environment is a condition of student engagement, not a backdrop. When schools design for these conditions deliberately — with the same rigour they bring to curriculum design — students are more likely to stay, to engage, and to develop as whole persons. This is dannelse made operational.</p></div></div>
+
+<hr />
+<h2 id="dannelse-and-learning-theory-illeriss-contribution">Dannelse and Learning Theory: Illeris's Contribution</h2>
+<p>The Danish learning theorist Knud Illeris provides a crucial bridge between the dannelse philosophical tradition and contemporary learning science. His comprehensive learning theory identifies three dimensions that must all be present for deep learning:</p>
+<ol>
+<li><strong>Content dimension:</strong> Knowledge, skills, understanding of the subject matter</li>
+<li><strong>Incentive dimension:</strong> Motivation, emotion, volition—the "why" that drives engagement</li>
+<li><strong>Interaction dimension:</strong> Action, communication, cooperation with others and the environment</li>
+</ol>
+<p>Most educational approaches emphasize content alone. Good teaching often attends to motivation and interaction separately. Illeris argues that transformative learning—learning that fundamentally changes the learner's identity, values, or understanding—requires all three dimensions working together (Illeris, 2003; 2014).</p>
+<p>This is where Illeris's work directly supports dannelse. Transformative learning, in his framework, is the deepest form of learning and the form most aligned with the dannelse tradition. When a student's identity shifts from "I'm bad at math" to "I'm someone who can struggle well and grow," that is transformative learning. When a student's values shift from "Only grades matter" to "I care about understanding," that is transformative learning. And when a student's relationship to others shifts from isolation to genuine collaboration, that is transformative learning.</p>
+<p>For course design on core competencies, the implication is clear: develop content knowledge about the competencies (e.g., what does critical thinking look like in different contexts?), create genuine motivation by showing why the competency matters for who students are becoming, and embed learning in interaction—collaborative tasks, feedback, peer learning—not solitary study.</p>
+<hr />
+<h2 id="dannelse-versus-21st-century-skills-a-useful-complementarity">Dannelse Versus 21st-Century Skills: A Useful Complementarity</h2>
+<p>It is common in contemporary education policy to hear about "21st-century skills"—frameworks like the Partnership for 21st Century Learning (P21), the World Economic Forum's Future of Jobs, and the OECD's competency models. These frameworks emphasize skills like critical thinking, collaboration, creativity, and communication. They are genuinely valuable. But they differ from dannelse in important ways.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Dannelse</th>
+<th>21st-Century Skills</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Origin</strong></td>
+<td>European philosophical tradition (Humboldt, Grundtvig, Klafki)</td>
+<td>Economic/policy discourse (P21, WEF, OECD)</td>
+</tr>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Holistic human formation, democratic citizenship</td>
+<td>Workforce preparation, economic competitiveness</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Identity, values, civic life, culture, character</td>
+<td>Cognitive and interpersonal skills</td>
+</tr>
+<tr>
+<td><strong>Assessment</strong></td>
+<td>Resists standardized measurement; emphasizes reflection and judgment</td>
+<td>Seeks measurable, demonstrable outcomes</td>
+</tr>
+<tr>
+<td><strong>Relationship to knowledge</strong></td>
+<td>Knowledge is transformative; learning changes who you are</td>
+<td>Knowledge is foundational; skills build on knowledge</td>
+</tr>
+</tbody>
+</table>
+<p>The key insight is that these approaches are complementary, not contradictory. The 21st-century skills frameworks provide practical, teachable, measurable competencies. Dannelse provides the <em>why</em>—the deeper purpose that gives those skills meaning and direction. A course on core competencies in a Danish school should do both: teach the practical competencies (problem-solving, collaboration, communication) while grounding them in the dannelse vision of what kind of person students are becoming and what their responsibility is to themselves, others, and society.</p>
+<div class="callout callout-warning"><div class="callout-title"><span class="callout-icon">⚠</span> Important Distinction</div><div class="callout-body"><p>It is possible to teach communication skills, for example, in a purely instrumental way: "Be a clear speaker because employers will hire you." This is not dannelse, though it may develop a competency. It is also possible to teach communication through a dannelse lens: "As you develop your voice as a speaker, you are learning to participate in democracy, to be heard, and to listen to others. What kind of speaker do you want to become, and what does that mean about how you communicate?" The same competency, taught through different philosophical frameworks, produces different learners.</p></div></div>
+
+<hr />
+<h2 id="implications-for-course-design">Implications for Course Design</h2>
+<p>When designing a course that expands the IB's ATL framework in a Danish context, several principles from the dannelse tradition should guide the work.</p>
+<p><strong>Frame competencies within dannelse philosophy.</strong> Skills should not be taught as isolated, technical capacities. Each competency should be connected to a larger question about human formation: Why does self-regulation matter? Because developing the ability to manage yourself is part of becoming an autonomous person. Why does critical thinking matter? Because it develops your capacity to question, judge, and participate responsibly in democracy. Why does collaboration matter? Because learning to work well with others—especially those different from you—is part of learning to live in <em>fællesskab</em>.</p>
+<p><strong>Use Danish language for core concepts alongside English.</strong> The terms <em>dannelse</em>, <em>fællesskab</em>, <em>medbestemmelse</em> (co-determination), and <em>selvbestemmelse</em> (self-determination) carry meaning that no English translation fully captures. Teaching them in Danish—and explaining them—honors the cultural tradition while making the concepts more concrete for Danish students.</p>
+<p><strong>Include reflection and identity work, not just skills training.</strong> Competency development should include structured opportunities for students to reflect on who they are becoming, what they value, and how their learning is shaping their identity. This might take the form of learning journals, portfolio reflections, or structured conversations with teachers.</p>
+<p><strong>Draw on VIA character strengths as a bridge between frameworks.</strong> The VIA strengths provide a common language that connects international research and Danish practice. They allow a school to speak both the language of character education and the language of contemporary competency frameworks.</p>
+<p><strong>Treat well-being and achievement as integrated, not separate.</strong> The Danish concept of <em>trivsel</em> (well-being) is not opposed to academic achievement; it is foundational to it. Students who feel belonging, who believe their learning matters, and who experience their strengths are recognized are more likely to engage deeply with challenging academic work.</p>
+<hr />
+<h2 id="connections">Connections</h2>
+<p><a href="Ch-30-Danish-Education-Reforms.html">Ch-30-Danish-Education-Reforms</a> — How the 2014 Folkeskole Reform and the epx gymnasium reform operationalize dannelse</p>
+<p><a href="Ch-31-Case-Study-Silkeborg-Gymnasium.html">Ch-31-Case-Study-Silkeborg-Gymnasium</a> — How Silkeborg Gymnasium implements dannelse through digital formation and professional learning communities</p>
+<p><a href="Ch-32-AI-in-Education.html">Ch-32-AI-in-Education</a> — Digital dannelse: How to engage with AI ethically and critically</p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>CEFU. (2020). <em>Program om karakterdannelse på erhvervsuddannelserne: Opsamling på forundersøgelse</em>. Centre for Youth Research. https://www.cefu.dk</li>
+<li>Illeris, K. (2003). Transformative learning in the perspective of a comprehensive learning theory. <em>Journal of Transformative Education</em>, 1(2), 79–89. https://doi.org/10.1177/1541344603262315</li>
+<li>Illeris, K. (2014). <em>Transformative learning and identity</em>. Routledge.</li>
+<li>Klafki, W. (2001). <em>Dannelsesteori og didaktik: Nye studier</em> (Danish edition). Klim.</li>
+<li>Ledertoug, M. M. (2019). <em>Styrkebaseret læring: Børns karakterstyrker som veje til trivsel og læring</em> [Doctoral dissertation]. DPU, Aarhus University. https://edu.au.dk</li>
+<li>Peterson, C., &amp; Seligman, M. E. P. (2004). <em>Character strengths and virtues: A handbook and classification</em>. American Psychological Association/Oxford University Press.</li>
+<li>UVM (Ministry of Children and Education). The aims of the Folkeskole. https://eng.uvm.dk/primary-and-lower-secondary-education/the-folkeskole/the-aims-of-the-folkeskole/</li>
+<li>Qvortrup, A., &amp; Lykkegaard, E. (2023). <em>Faglig trivsel – Ungdomsuddannelserne under LUP</em>. Akademisk Forlag.</li>
+<li>Qvortrup, A., &amp; Lykkegaard, E. (2024). <em>TrivselsLUP 2024</em>. Center for Gymnasie- og Erhvervsuddannelsesforskning, SDU. https://www.sdu.dk/da/forskning/center-for-gymnasieforskning/nyheder_ny/trivselslup</li>
+<li>Qvortrup, A., &amp; Qvortrup, L. (2018). Inclusion: Dimensions of inclusion in education. <em>International Journal of Inclusive Education</em>, 22(7), 803–817. https://doi.org/10.1080/13603116.2017.1412506</li>
+<li>Qvortrup, A., &amp; Wiberg, M. (Eds.). (2017). <em>Dealing with conceptualisations of learning: Learning between means and aims in theory and practice</em>. Sense Publishers. https://doi.org/10.1007/978-94-6351-029-5</li>
+<li>von Oettingen, A. (Ed.). (2018). <em>Almen dannelse: Dannelsesstandarder og fag</em>. Hans Reitzel.</li>
+</ul>
+    </article>
+    <footer class="page-footer">
+      <p>Part of <em>Developing Learners, Developing Individuals</em> · A Research Foundation for Expanding IB Theory of Knowledge</p>
+      <p class="build-time">Last built: 2026-03-13 05:52</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Desktop collapse ───────────────────────────────────────────────────────
+  const layout    = document.getElementById('layout');
+  const collapser = document.getElementById('sidebarCollapser');
+  const sidebar   = document.getElementById('sidebar');
+  const mobToggle = document.getElementById('sidebarToggle');
+  const SK_DESK   = 'sidebar-desktop-open';
+
+  function setDesktopSidebar(open) {
+    layout.classList.toggle('sidebar-collapsed', !open);
+    collapser.querySelector('.collapser-icon').innerHTML = open ? '&#8249;' : '&#8250;';
+    collapser.setAttribute('aria-label', open ? 'Collapse sidebar' : 'Expand sidebar');
+    try { sessionStorage.setItem(SK_DESK, open ? '1' : '0'); } catch(e) {}
+  }
+
+  collapser.addEventListener('click', () => setDesktopSidebar(layout.classList.contains('sidebar-collapsed')));
+
+  try { setDesktopSidebar(sessionStorage.getItem(SK_DESK) !== '0'); }
+  catch(e) { setDesktopSidebar(true); }
+
+  // ── Mobile sidebar ─────────────────────────────────────────────────────────
+  mobToggle.addEventListener('click', () => {
+    const open = !sidebar.classList.contains('mobile-open');
+    sidebar.classList.toggle('mobile-open', open);
+    mobToggle.classList.toggle('active', open);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth < 900 && sidebar.classList.contains('mobile-open')
+        && !sidebar.contains(e.target) && e.target !== mobToggle) {
+      sidebar.classList.remove('mobile-open');
+      mobToggle.classList.remove('active');
+    }
+  });
+
+  // ── Search (full-text across all chapters) ─────────────────────────────────
+  // Index is loaded synchronously via <script src="search-index.js"> in <head>,
+  // so window.SEARCH_INDEX is always available — no fetch, works with file://
+  const searchInput   = document.getElementById('sidebarSearch');
+  const searchResults = document.getElementById('searchResults');
+  const partsDiv      = document.getElementById('sidebarParts');
+
+  function highlight(text, query) {
+    if (!query || !text) return text || '';
+    const lower = text.toLowerCase();
+    const qLow  = query.toLowerCase();
+    const qLen  = query.length;
+    let result = '';
+    let i = 0;
+    while (i < text.length) {
+      const idx = lower.indexOf(qLow, i);
+      if (idx === -1) { result += text.slice(i); break; }
+      result += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + qLen) + '</mark>';
+      i = idx + qLen;
+    }
+    return result;
+  }
+
+  function excerpt(body, query) {
+    if (!body || !query) return '';
+    const idx = body.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return '';
+    const start = Math.max(0, idx - 40);
+    const end   = Math.min(body.length, idx + 100);
+    return (start > 0 ? '…' : '') + highlight(body.slice(start, end), query) + '…';
+  }
+
+  // Find the first section in an item whose text or heading contains the query word
+  function findSection(item, word) {
+    if (!item.sections) return null;
+    return item.sections.find(function(s) {
+      return s.text.toLowerCase().indexOf(word) !== -1
+          || s.heading.toLowerCase().indexOf(word) !== -1;
+    }) || null;
+  }
+
+  // Build a deep link: page.html?q=term#section-id
+  function deepLink(item, q, section) {
+    const qEnc = encodeURIComponent(q);
+    return item.href + '?q=' + qEnc + (section ? '#' + section.id : '');
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+    if (!q) {
+      searchResults.hidden = true;
+      partsDiv.hidden = false;
+      return;
+    }
+    partsDiv.hidden = true;
+    searchResults.hidden = false;
+
+    const index = window.SEARCH_INDEX || [];
+    const words = q.toLowerCase().split(' ').filter(function(w) { return w.length > 0; });
+
+    const hits = index.filter(function(item) {
+      const sectionText = (item.sections || []).map(function(s) {
+        return s.heading + ' ' + s.text;
+      }).join(' ');
+      const blob = [item.title, item.summary, item.part,
+                    (item.tags || []).join(' '), sectionText].join(' ').toLowerCase();
+      return words.every(function(w) { return blob.indexOf(w) !== -1; });
+    }).slice(0, 15);
+
+    if (hits.length === 0) {
+      searchResults.innerHTML = '<li class="search-no-results">No results found</li>';
+      return;
+    }
+
+    const firstWord = words[0];
+    searchResults.innerHTML = hits.map(function(item) {
+      const section   = findSection(item, firstWord);
+      const href      = deepLink(item, q, section);
+      const titleHtml = highlight(item.title, q);
+      const tags = (item.tags || []).slice(0, 3)
+        .map(function(t) { return '<span class="search-tag">' + t + '</span>'; }).join('');
+
+      // Snippet: prefer section heading + excerpt, fall back to summary
+      let snip = '';
+      if (section) {
+        const secLabel = '<span class="search-section">§ ' + highlight(section.heading, q) + '</span>';
+        const inHeading = section.heading.toLowerCase().indexOf(firstWord) !== -1;
+        snip = secLabel + (inHeading ? '' : '<span class="search-summary">' + excerpt(section.text, firstWord) + '</span>');
+      } else if (item.summary) {
+        snip = '<span class="search-summary">' + highlight(item.summary.slice(0, 110), q) + '…</span>';
+      }
+
+      return '<li><a href="' + href + '"><span class="search-title">' + titleHtml + '</span>' + tags + snip + '</a></li>';
+    }).join('');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) { renderResults(e.target.value); });
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { searchInput.value = ''; renderResults(''); searchInput.blur(); }
+    });
+  }
+
+  // ── Arrival highlight: light up matched text when coming from search ──────
+  (function arrivalHighlight() {
+    const q = new URLSearchParams(location.search).get('q');
+    if (!q) return;
+
+    const article = document.querySelector('article');
+    if (!article) return;
+
+    const marks = [];
+
+    function walkNode(node) {
+      if (node.nodeType === 3) {
+        const text  = node.textContent;
+        const lower = text.toLowerCase();
+        const qLow  = q.toLowerCase();
+        const qLen  = q.length;
+        let i = 0;
+        const frags = [];
+        while (i < text.length) {
+          const idx = lower.indexOf(qLow, i);
+          if (idx === -1) { frags.push(document.createTextNode(text.slice(i))); break; }
+          if (idx > i) frags.push(document.createTextNode(text.slice(i, idx)));
+          const m = document.createElement('mark');
+          m.className = 'arrival-hl';
+          m.textContent = text.slice(idx, idx + qLen);
+          frags.push(m);
+          marks.push(m);
+          i = idx + qLen;
+        }
+        if (frags.length > 1) {
+          const parent = node.parentNode;
+          frags.forEach(function(f) { parent.insertBefore(f, node); });
+          parent.removeChild(node);
+        }
+      } else if (node.nodeType === 1
+          && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE'
+          && node.tagName !== 'MARK'  && node.tagName !== 'A') {
+        Array.from(node.childNodes).forEach(walkNode);
+      }
+    }
+
+    walkNode(article);
+
+    // Scroll the first match into view (if we didn't land on a hash)
+    if (marks.length > 0 && !location.hash) {
+      marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Fade out after 4 s, then remove the <mark> nodes cleanly
+    setTimeout(function() {
+      marks.forEach(function(m) {
+        m.style.transition = 'background 1.5s, color 1.5s';
+        m.style.background = 'transparent';
+        m.style.color = 'inherit';
+      });
+      setTimeout(function() {
+        marks.forEach(function(m) {
+          if (m.parentNode) {
+            m.parentNode.insertBefore(document.createTextNode(m.textContent), m);
+            m.parentNode.removeChild(m);
+          }
+        });
+      }, 1600);
+    }, 4000);
+  })();
+
+  // ── Inline section nav (only for the active chapter) ──────────────────────
+  (function buildInlineSectionNav() {
+    const article    = document.querySelector('article');
+    const activeLink = document.querySelector('.chapter-list a.active');
+    if (!article || !activeLink) return;
+
+    const headings = Array.from(article.querySelectorAll('h2, h3'));
+    if (headings.length < 2) return;
+
+    // Ensure IDs exist (python-markdown toc extension adds these, but just in case)
+    headings.forEach((h, i) => { if (!h.id) h.id = 'sec-' + i; });
+
+    // Build inline <ul> to insert after the active chapter link
+    const ul = document.createElement('ul');
+    ul.className = 'inline-section-nav';
+    ul.innerHTML = headings.map(h => {
+      const cls = h.tagName === 'H3' ? ' class="sec-h3"' : '';
+      return '<li' + cls + '><a class="sec-link" href="#' + h.id + '">' + h.textContent + '</a></li>';
+    }).join('');
+
+    // Insert right inside the active <li>, below the chapter link
+    activeLink.parentElement.appendChild(ul);
+
+    // Scrollspy — highlight current section in the inline nav
+    const links = ul.querySelectorAll('a.sec-link');
+    let activeId = null;
+
+    function setActive(id) {
+      if (id === activeId) return;
+      activeId = id;
+      links.forEach(a => a.classList.toggle('sec-active', a.getAttribute('href') === '#' + id));
+      // Scroll the active link into view within the sidebar
+      const activeA = ul.querySelector('a.sec-active');
+      if (activeA) activeA.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '0px 0px -65% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+
+    // Scroll fallback
+    let t;
+    window.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        let cur = headings[0];
+        headings.forEach(h => { if (h.getBoundingClientRect().top <= 80) cur = h; });
+        if (cur) setActive(cur.id);
+      }, 50);
+    }, { passive: true });
+  })();
+
+})();
+</script>
+</body>
+</html>
