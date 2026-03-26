@@ -272,12 +272,22 @@ def build_sidebar(active_stem=None):
             parts.append(current)
             continue
 
+        # Top-level chapter entry (no leading spaces)
         li = re.match(r'^[-*] \[\[([^\]|]+?)(?:\|([^\]]+))?\]\]', line)
         if li and current is not None:
             stem  = li.group(1).strip()
             label = li.group(2).strip() if li.group(2) else stem
             href  = _href(stem)
-            current['items'].append((href, label))
+            current['items'].append({'href': href, 'label': label, 'children': []})
+            continue
+
+        # Indented sub-chapter entry (2–8 spaces + - [[...]])
+        sub = re.match(r'^ {2,8}[-*] \[\[([^\]|]+?)(?:\|([^\]]+))?\]\]', line)
+        if sub and current is not None and current['items']:
+            stem  = sub.group(1).strip()
+            label = sub.group(2).strip() if sub.group(2) else stem
+            href  = _href(stem)
+            current['items'][-1]['children'].append({'href': href, 'label': label})
 
     html = ['<nav class="sidebar-nav" id="sidebarNav">']
 
@@ -301,8 +311,11 @@ def build_sidebar(active_stem=None):
     html.append('<div id="sidebarParts">')
     for part in parts:
         has_active = any(
-            (active_stem and Path(href).stem == active_stem)
-            for href, _ in part['items']
+            (active_stem and (
+                Path(item['href']).stem == active_stem or
+                any(Path(c['href']).stem == active_stem for c in item['children'])
+            ))
+            for item in part['items']
         )
         open_attr = ' open' if has_active else ''
 
@@ -310,17 +323,33 @@ def build_sidebar(active_stem=None):
         html.append(f'  <summary class="part-title">{part["title"]}</summary>')
         html.append(f'  <ul class="chapter-list">')
 
-        for href, label in part['items']:
-            stem = Path(href).stem
-            active_cls = ' class="active"' if (active_stem and stem == active_stem) else ''
-            html.append(f'    <li><a href="{href}"{active_cls}>{label}</a></li>')
+        for item in part['items']:
+            stem       = Path(item['href']).stem
+            is_active  = bool(active_stem and stem == active_stem)
+            sub_active = bool(active_stem and any(
+                Path(c['href']).stem == active_stem for c in item['children']
+            ))
+
+            li_cls     = ' class="has-subchapters"' if item['children'] else ''
+            active_cls = ' class="active"' if is_active else (
+                         ' class="parent-active"' if sub_active else '')
+
+            html.append(f'    <li{li_cls}>')
+            html.append(f'      <a href="{item["href"]}"{active_cls}>{item["label"]}</a>')
+
+            if item['children']:
+                html.append(f'      <ul class="subchapter-list">')
+                for child in item['children']:
+                    cstem      = Path(child['href']).stem
+                    cactive_cls = ' class="active"' if (active_stem and cstem == active_stem) else ''
+                    html.append(f'        <li><a href="{child["href"]}"{cactive_cls}>{child["label"]}</a></li>')
+                html.append(f'      </ul>')
+
+            html.append(f'    </li>')
 
         html.append(f'  </ul>')
         html.append(f'</details>')
     html.append('</div>')  # #sidebarParts
-
-    # Inline section nav injected by JS under the active chapter <li>
-    # (no static placeholder needed — JS creates it at runtime)
 
     html.append('</nav>')
     return '\n'.join(html)
@@ -577,7 +606,7 @@ HTML_TEMPLATE = """\
   // ── Inline section nav (only for the active chapter) ──────────────────────
   (function buildInlineSectionNav() {
     const article    = document.querySelector('article');
-    const activeLink = document.querySelector('.chapter-list a.active');
+    const activeLink = document.querySelector('.chapter-list a.active, .subchapter-list a.active');
     if (!article || !activeLink) return;
 
     const headings = Array.from(article.querySelectorAll('h2, h3'));
@@ -643,6 +672,34 @@ def _fill_template(template, **kwargs):
     return result
 
 
+def extract_youtube_id(url):
+    """Return the 11-char video ID from a YouTube URL, or None."""
+    if not url:
+        return None
+    m = re.search(r'youtu\.be/([A-Za-z0-9_-]{11})', str(url))
+    if m:
+        return m.group(1)
+    m = re.search(r'[?&]v=([A-Za-z0-9_-]{11})', str(url))
+    if m:
+        return m.group(1)
+    return None
+
+
+def make_youtube_embed(url):
+    """Return a responsive YouTube <iframe> block, or empty string."""
+    vid_id = extract_youtube_id(url)
+    if not vid_id:
+        return ''
+    return (
+        '\n<div class="youtube-embed">'
+        f'<iframe src="https://www.youtube.com/embed/{vid_id}" '
+        'title="YouTube video" frameborder="0" '
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; '
+        'gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        '</div>\n'
+    )
+
+
 def make_breadcrumb(meta):
     """Generate breadcrumb from frontmatter."""
     parts = []
@@ -666,6 +723,16 @@ def wrap_page(content_html, meta, stem):
     sidebar    = build_sidebar(active_stem=stem)
     page_title = make_page_title(meta, stem)
     breadcrumb = make_breadcrumb(meta)
+
+    # YouTube embed — inject after first </h1> if the page has a YouTube URL
+    url = meta.get('url', '') or ''
+    if url and ('youtube.com' in str(url) or 'youtu.be' in str(url)):
+        embed = make_youtube_embed(str(url))
+        if embed:
+            if '</h1>' in content_html:
+                content_html = content_html.replace('</h1>', '</h1>' + embed, 1)
+            else:
+                content_html = embed + content_html
 
     # Prefer the frontmatter date (revised > created) over the build timestamp.
     # YAML parses bare dates as datetime.date objects, so convert to string.
