@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Questions from the Ground Up — Developing Learners, Developing Individuals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="search-index.js"></script>
+</head>
+<body>
+
+<!-- Mobile hamburger -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Desktop sidebar collapse tab -->
+<button class="sidebar-collapser" id="sidebarCollapser" aria-label="Toggle sidebar">
+  <span class="collapser-icon">&#8249;</span>
+</button>
+
+<div class="layout" id="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" id="sidebarNav">
+<a class="sidebar-brand" href="00-Table-of-Contents.html"><span>Developing Learners, Developing Individuals</span></a>
+<div class="sidebar-search"><input type="search" id="sidebarSearch" placeholder="Search chapters…" autocomplete="off" spellcheck="false"></div>
+<ul class="search-results" id="searchResults" hidden></ul>
+<div id="sidebarParts">
+<details class="part-group">
+  <summary class="part-title">Part I — The Case for Change</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-I-Introduction.html">Part I Overview</a>
+    </li>
+    <li>
+      <a href="Ch-01-Introduction.html">Chapter 1 — Why Core Competencies Matter</a>
+    </li>
+    <li>
+      <a href="Ch-02-21st-Century-Skills-Landscape.html">Chapter 2 — The 21st-Century Skills Landscape</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-03-Skills-at-Risk-in-a-Digital-Age.html">Chapter 3 — Skills at Risk in a Digital Age</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-03a-Six-Skills-Under-Pressure.html">3a — Six Skills Under Pressure</a></li>
+        <li><a href="Ch-03b-Responses-and-Strategies.html">3b — Responses & Strategies</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part II — Core Competencies</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-II-Introduction.html">Part II Overview</a>
+    </li>
+    <li>
+      <a href="Ch-04-Critical-Thinking.html">Chapter 4 — Critical Thinking</a>
+    </li>
+    <li>
+      <a href="Ch-05-Collaboration-and-Teamwork.html">Chapter 5 — Collaboration & Teamwork</a>
+    </li>
+    <li>
+      <a href="Ch-06-Information-and-Digital-Literacy.html">Chapter 6 — Information & Digital Literacy</a>
+    </li>
+    <li>
+      <a href="Ch-07-Self-Directed-Learning.html">Chapter 7 — Self-Directed Learning</a>
+    </li>
+    <li>
+      <a href="Ch-08-Leadership-Communication-and-Global-Competence.html">Chapter 8 — Leadership, Communication & Global Competence</a>
+    </li>
+    <li>
+      <a href="Ch-09-Comparing-Competency-Frameworks.html">Chapter 9 — Comparing Competency Frameworks</a>
+    </li>
+    <li>
+      <a href="Ch-10-IB-Approaches-to-Learning.html">Chapter 10 — IB Approaches to Learning</a>
+    </li>
+    <li>
+      <a href="Ch-11-Creativity-and-Creative-Thinking.html">Chapter 11 — Creativity & Creative Thinking</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part III — How Learning Works</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-III-Introduction.html">Part III Overview</a>
+    </li>
+    <li>
+      <a href="Ch-12-Memory-and-Levels-of-Processing.html">Chapter 12 — Memory & Levels of Processing</a>
+    </li>
+    <li>
+      <a href="Ch-13-Retrieval-Practice-and-Spaced-Learning.html">Chapter 13 — Retrieval Practice & Spaced Learning</a>
+    </li>
+    <li>
+      <a href="Ch-14-Cognitive-Load-and-Guided-Instruction.html">Chapter 14 — Cognitive Load & Guided Instruction</a>
+    </li>
+    <li>
+      <a href="Ch-15-Metacognition-and-Self-Regulation.html">Chapter 15 — Metacognition & Self-Regulation</a>
+    </li>
+    <li>
+      <a href="Ch-16-Growth-Mindset.html">Chapter 16 — Growth Mindset</a>
+    </li>
+    <li>
+      <a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Chapter 17 — Productive Struggle & Desirable Difficulties</a>
+    </li>
+    <li>
+      <a href="Ch-18-Learning-to-Learn.html">Chapter 18 — Learning to Learn: Every Student is a Teacher</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-19-Motivation-Autonomy-and-the-Adult-Learner.html">Chapter 19 — Motivation, Autonomy & the Adult Learner</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-19a-Motivation-and-Behavioural-Design.html">19a — Motivation & Behavioural Design</a></li>
+        <li><a href="Ch-19b-Andragogy-and-Self-Determination.html">19b — Andragogy & Self-Determination</a></li>
+      </ul>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-20-The-Emotional-Learner-Wellbeing-Resilience-and-Grit.html">Chapter 20 — The Emotional Learner: Wellbeing, Resilience & Grit</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-20a-Stress-Resilience-and-Discipline.html">20a — Stress Mindset, Resilience & Discipline</a></li>
+        <li><a href="Ch-20b-Philosophy-of-Resilience-and-Character.html">20b — Philosophy of Resilience & Character</a></li>
+        <li><a href="Ch-20c-Grit-Wellbeing-and-Practical-Strategies.html">20c — Grit, Wellbeing & Practical Strategies</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part IV — Pedagogy in Practice</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-IV-Introduction.html">Part IV Overview</a>
+    </li>
+    <li>
+      <a href="Ch-21-Building-Thinking-Classrooms.html">Chapter 21 — Building Thinking Classrooms</a>
+    </li>
+    <li>
+      <a href="Ch-22-Principles-of-Effective-Instruction.html">Chapter 22 — Principles of Effective Instruction</a>
+    </li>
+    <li>
+      <a href="Ch-23-Teaching-Techniques-and-Thinking-Routines.html">Chapter 23 — Teaching Techniques & Thinking Routines</a>
+    </li>
+    <li>
+      <a href="Ch-24-Effective-Feedback.html">Chapter 24 — Effective Feedback</a>
+    </li>
+    <li>
+      <a href="Ch-25-Assessment-Literacy-Students-as-Assessment-Agents.html">Chapter 25 — Assessment Literacy: Students as Assessment Agents</a>
+    </li>
+    <li>
+      <a href="Ch-26-Teaching-Writing.html">Chapter 26 — Teaching Writing</a>
+    </li>
+    <li>
+      <a href="Ch-27-Project-Based-Learning.html">Chapter 27 — Project-Based Learning</a>
+    </li>
+    <li>
+      <a href="Ch-28-Reflective-Practice.html">Chapter 28 — Reflective Practice</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part V — The Danish Context</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-V-Introduction.html">Part V Overview</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-29-Dannelse-and-Character-Formation.html">Chapter 29 — Dannelse & Character Formation</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-29a-Dannelse-Theory-and-Research.html">29a — Theory & Research Foundations</a></li>
+        <li><a href="Ch-29b-Comparative-Perspectives-and-Course-Design.html">29b — Comparative Perspectives & Course Design</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="Ch-30-Danish-Education-Reforms.html">Chapter 30 — Danish Education Reforms</a>
+    </li>
+    <li>
+      <a href="Ch-31-Case-Study-Silkeborg-Gymnasium.html">Chapter 31 — Case Study: Silkeborg Gymnasium</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part VI — Implementation & the Future</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-VI-Introduction.html">Part VI Overview</a>
+    </li>
+    <li>
+      <a href="Ch-32-AI-in-Education.html">Chapter 32 — AI in Education</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-33-Implementation-Science.html">Chapter 33 — Implementation Science</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-33a-Frameworks-and-Blueprint.html">33a — Frameworks & 90-Day Blueprint</a></li>
+        <li><a href="Ch-33b-Evaluation-and-Adaptive-Design.html">33b — Evaluation & Adaptive Design</a></li>
+      </ul>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-34-Practical-Strategies-for-Schools.html">Chapter 34 — Practical Strategies for Schools</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-34a-Classroom-Strategies-and-Routines.html">34a — Classroom Strategies & Routines</a></li>
+        <li><a href="Ch-34b-AI-Agents-and-Implementation.html">34b — AI Agents & Implementation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="Ch-35-Being-More-Human-in-an-AI-Age.html">Chapter 35 — Being More Human in an AI Age</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part VII — Lessons from the Past</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-VII-Introduction.html">Part VII Overview</a>
+    </li>
+    <li>
+      <a href="Ch-36-Failure-and-Overreach.html">Chapter 36 — Failure & Overreach</a>
+    </li>
+    <li>
+      <a href="Ch-37-Discipline-and-Self-Mastery.html">Chapter 37 — Discipline & Self-Mastery</a>
+    </li>
+    <li>
+      <a href="Ch-38-Compounding-and-Patience.html">Chapter 38 — Compounding & Patience</a>
+    </li>
+    <li>
+      <a href="Ch-39-Responsibility-and-Leaving-Things-Better.html">Chapter 39 — Responsibility & Leaving Things Better</a>
+    </li>
+    <li>
+      <a href="Ch-40-Attention-and-Presence.html">Chapter 40 — Attention & Presence</a>
+    </li>
+    <li>
+      <a href="Ch-41-The-Adult-Threshold-and-Coming-of-Age.html">Chapter 41 — The Adult Threshold & Coming of Age</a>
+    </li>
+    <li>
+      <a href="Ch-42-Knowledge-Wisdom-and-Humility.html">Chapter 42 — Knowledge, Wisdom & Humility</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group" open>
+  <summary class="part-title">Appendix — TOK Connections</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Appendix-Introduction.html">Appendix Overview</a>
+    </li>
+    <li>
+      <a href="A1-Curriculum-Hook-Map.html">A1 — Curriculum Hook Map</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="A2-Pedagogical-Playbook.html">A2 — Pedagogical Playbook</a>
+      <ul class="subchapter-list">
+        <li><a href="A2a-Six-Lesson-Mini-Sequence.html">A2a — Six-Lesson Mini-Sequence</a></li>
+        <li><a href="A2b-Protocols-Assessment-and-Troubleshooting.html">A2b — Protocols, Assessment & Troubleshooting</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="A3-Essay-Angles.html">A3 — Essay Angles</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="A4-Exhibition-Object-Ideas.html">A4 — Exhibition Object Ideas</a>
+      <ul class="subchapter-list">
+        <li><a href="A4a-Object-Bank-by-Prompt.html">A4a — Object Bank by Prompt</a></li>
+        <li><a href="A4b-Exhibition-Studio-and-Quality-Guide.html">A4b — Exhibition Studio & Quality Guide</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="A5-TOK-Year-1-and-Year-2-Scope-and-Sequence.html">A5 — Y1/Y2 Scope & Sequence</a>
+    </li>
+    <li>
+      <a href="A6-Knowledge-Questions-from-the-Ground-Up.html" class="active">A6 — Knowledge Questions from the Ground Up</a>
+    </li>
+  </ul>
+</details>
+</div>
+</nav>
+  </aside>
+
+  <main class="content" id="main">
+    <article>
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="00-Table-of-Contents.html">Contents</a><span class="sep">›</span><span>Appendix</span></nav>
+      <h1 id="appendix-a6-knowledge-questions-from-the-ground-up">Appendix A6 — Knowledge Questions from the Ground Up</h1>
+<div class="callout callout-abstract"><div class="callout-title"><span class="callout-icon">◉</span> Overview</div><div class="callout-body"><p>Knowledge questions are the beating heart of TOK — but for most students and many teachers, they are also the point of greatest disconnect. Students hear "knowledge question" and freeze. Teachers present lists of abstract KQs on a slide and wonder why the room goes silent. This appendix provides a scaffolding approach that builds KQ fluency progressively: from noticing puzzlement, through structured questioning, to genuine epistemological inquiry. The goal is not to simplify KQs but to make the path to them visible.</p></div></div>
+
+<hr />
+<h2 id="the-problem">The Problem</h2>
+<p>There is a persistent gap between what TOK intends and what students experience. The IB's TOK guide describes knowledge questions as "questions about knowledge itself" — open, general, and concerned with how we know rather than what we know (IBO, 2022). This is correct but unhelpful for a 16-year-old encountering the concept for the first time. Students are told to ask questions like "What role does evidence play in the formation of knowledge?" and respond with blank stares — not because they are incapable of epistemological thinking, but because no one has shown them the steps between "I'm confused about something" and "I have a knowledge question."</p>
+<p>Teachers struggle too. Research by the IB itself found that many subject teachers find TOK "suddenly really abstract and really tough" and feel unable to connect it meaningfully to their own disciplines (IBO, 2019). The result is that TOK often becomes a course <em>about</em> knowledge questions rather than a course <em>of</em> genuine inquiry — students learn to recognise and label KQs rather than to generate them from authentic puzzlement.</p>
+<hr />
+<h2 id="the-scaffolding-ladder-five-levels">The Scaffolding Ladder: Five Levels</h2>
+<p>This ladder moves students from concrete experience to abstract inquiry. Each level builds on the previous one. The key principle is: <strong>never skip a level.</strong> Students who cannot articulate what puzzles them (Level 1) will not produce genuine knowledge questions (Level 4).</p>
+<h3 id="level-1-notice-the-puzzlement">Level 1 — Notice the Puzzlement</h3>
+<p><strong>What it is:</strong> Students identify something that surprises, confuses, or challenges their expectations in a real situation.</p>
+<p><strong>What it sounds like:</strong>
+- "Wait, that doesn't make sense..."
+- "I thought I knew this, but now I'm not sure..."
+- "How can two people look at the same thing and see different things?"
+- "Why does this feel wrong even though the numbers say it's right?"</p>
+<p><strong>How to teach it:</strong>
+Present students with carefully chosen provocations — not abstract philosophy, but concrete experiences that generate genuine puzzlement. An optical illusion that reveals the limits of perception. A news headline that contradicts what they learned in another class. An AI-generated essay that sounds perfect but contains subtle errors. A historical event presented from two contradictory perspectives.</p>
+<p>The teacher's role at this level is <em>not</em> to introduce TOK vocabulary. It is to protect the moment of puzzlement — to resist the urge to explain and instead ask: "What surprised you? What feels off? Where is the gap between what you expected and what happened?"</p>
+<div class="callout callout-example"><div class="callout-title"><span class="callout-icon">»</span> In Practice — The Three-Minute Puzzlement Journal</div><div class="callout-body"><p>At the start of each TOK lesson, display a provocation (an image, a headline, a quotation, a short video clip). Students write for three minutes: "What puzzles me about this is..." No right answers. No KQ vocabulary. Just noticing. Over weeks, students build a personal puzzlement collection that becomes the raw material for everything that follows.</p></div></div>
+
+<h3 id="level-2-ask-a-first-draft-question">Level 2 — Ask a First-Draft Question</h3>
+<p><strong>What it is:</strong> Students turn their puzzlement into a rough question. The question does not need to be a proper knowledge question yet — it just needs to be honest.</p>
+<p><strong>What it sounds like:</strong>
+- "Why do I trust this source more than that one?"
+- "How do scientists decide when they have enough evidence?"
+- "Does it matter if a poem is based on a true story?"
+- "Can AI understand something, or does it just process information?"</p>
+<p><strong>How to teach it:</strong>
+Give students a simple frame: "Turn your puzzlement into a question starting with <em>How</em>, <em>Why</em>, <em>To what extent</em>, or <em>What role does...</em>" Accept all questions without judgment. The goal is fluency — students should generate questions easily and habitually.</p>
+<p>A useful technique is <strong>Question Flooding</strong>: give students three minutes to write as many questions as they can about a single provocation. Quantity first, quality later. Most students will produce 8–12 questions, and at least two or three will be proto-knowledge questions without the student realising it.</p>
+<h3 id="level-3-distinguish-what-from-how-do-we-know">Level 3 — Distinguish "What?" from "How do we know?"</h3>
+<p><strong>What it is:</strong> Students learn to separate content questions (which ask <em>what</em> is true) from knowledge questions (which ask <em>how we know</em> what is true, or <em>what it means</em> to know something).</p>
+<p><strong>What it sounds like:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Content Question</th>
+<th>Knowledge Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What causes climate change?</td>
+<td>How do scientists justify the claim that climate change is human-caused?</td>
+</tr>
+<tr>
+<td>When did the French Revolution start?</td>
+<td>Why do historians disagree about the causes of the French Revolution?</td>
+</tr>
+<tr>
+<td>Is AI intelligent?</td>
+<td>What would count as evidence that AI is genuinely intelligent?</td>
+</tr>
+<tr>
+<td>Is this painting good?</td>
+<td>By what criteria do we judge artistic quality, and who decides?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to teach it:</strong>
+Use the <strong>Sort and Shift</strong> activity. Give students a mixed list of 10–12 questions (some content, some knowledge). Have them sort into two piles. Then have them take three content questions and <em>shift</em> them into knowledge questions by adding "How do we know...?", "What counts as evidence for...?", "What role does perspective play in...?", or "To what extent can we be certain that...?"</p>
+<p>The insight that makes this click: <em>content questions have answers that can be looked up; knowledge questions have answers that require judgment.</em> If Google can answer it definitively, it is probably a content question. If two thoughtful people could reasonably disagree, it is probably a knowledge question.</p>
+<h3 id="level-4-connect-to-an-aok-or-theme">Level 4 — Connect to an AOK or Theme</h3>
+<p><strong>What it is:</strong> Students link their knowledge question to a specific Area of Knowledge or TOK Theme, and begin to see how the same question looks different through different lenses.</p>
+<p><strong>What it sounds like:</strong>
+- "In the Natural Sciences, evidence means reproducible experimental data — but in History, evidence means documents interpreted in context. So when I ask 'what counts as evidence?', the answer depends on which AOK I'm asking about."
+- "The question 'whose knowledge counts?' is a Knowledge and Politics question, but it also connects to Knowledge and Indigenous Societies."</p>
+<p><strong>How to teach it:</strong>
+Use the <strong>AOK Lens Rotation</strong>. Students take a single KQ and pass it through three different AOK lenses. For example, "How do we know what is beautiful?" is a very different question in the Arts (aesthetic theory), in Mathematics (golden ratio, symmetry), and in the Human Sciences (evolutionary psychology of attraction). Students complete a comparison table for each lens. This is where AOKs stop being abstract categories and become genuine tools for thinking differently.</p>
+<div class="callout callout-tip"><div class="callout-title"><span class="callout-icon">◆</span> The Concept Connection</div><div class="callout-body"><p>The IB identifies twelve core concepts for TOK: evidence, certainty, truth, interpretation, power, justification, explanation, objectivity, perspective, culture, values, and responsibility. Have students identify which concepts their KQ connects to. Over time, build a classroom wall display showing clusters of KQs connected to concepts, with lines drawn to the AOKs where each concept manifests. The visual map makes the abstract structure of TOK visible and shows students how their individual questions fit into a larger epistemological landscape.</p></div></div>
+
+<h3 id="level-5-formulate-a-genuine-knowledge-question">Level 5 — Formulate a Genuine Knowledge Question</h3>
+<p><strong>What it is:</strong> Students produce a polished knowledge question that is open, general, and concerned with knowledge itself — suitable for exhibition commentary or essay exploration.</p>
+<p><strong>What it sounds like:</strong>
+- "To what extent does the method of justification used in a field of knowledge determine what can count as knowledge in that field?"
+- "How does the knower's cultural perspective shape what they consider to be reliable evidence?"
+- "If technology can produce knowledge more efficiently than humans, what is the value of human knowing?"</p>
+<p><strong>How to teach it:</strong>
+By the time students reach Level 5, the question should emerge naturally from the work done at Levels 1–4. The teacher's role is now editorial: helping students sharpen language, remove unnecessary complexity, and ensure the question is genuinely open (not a disguised opinion). A good test: can you imagine at least three different, defensible answers to this question? If so, it is a genuine KQ.</p>
+<hr />
+<h2 id="the-progression-in-practice-a-worked-example">The Progression in Practice: A Worked Example</h2>
+<p><strong>Provocation:</strong> The teacher shows two AI-generated images of a historical event. One looks historically accurate; the other is obviously wrong but more emotionally compelling.</p>
+<p><strong>Level 1 (Puzzlement):</strong> "I know the second image is wrong, but it <em>feels</em> more true. That's weird."</p>
+<p><strong>Level 2 (First-draft question):</strong> "Why does something that's factually wrong feel more true than something that's accurate?"</p>
+<p><strong>Level 3 (Content → Knowledge shift):</strong> Content: "Which image is historically accurate?" → Knowledge: "What role do emotions play in determining what we accept as true?"</p>
+<p><strong>Level 4 (AOK connection):</strong> In History, emotional resonance can shape which narratives survive. In the Natural Sciences, emotional response to data (the "that can't be right" instinct) sometimes leads to important discoveries and sometimes to confirmation bias. In the Arts, emotional truth is sometimes valued above factual accuracy.</p>
+<p><strong>Level 5 (Polished KQ):</strong> "To what extent should emotional resonance be considered a valid criterion for evaluating knowledge claims, and does the answer differ across Areas of Knowledge?"</p>
+<hr />
+<h2 id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</h2>
+<p><strong>Pitfall 1: Skipping to Level 5.</strong> Teachers present polished KQs on a slide and ask students to discuss them. Students have no ownership, no puzzlement, no authentic investment. The discussion is dutiful, not genuine.
+<em>Fix:</em> Always start at Level 1. If the provocation doesn't generate genuine puzzlement, find a better provocation — don't just present a better question.</p>
+<p><strong>Pitfall 2: Accepting any question as a KQ.</strong> "What is DNA?" is not a knowledge question. Neither is "Is social media bad?" Being kind about question quality does not mean being unclear about what a KQ is.
+<em>Fix:</em> Use the Level 3 sort activity regularly. Students should be able to explain <em>why</em> a question is or is not a KQ.</p>
+<p><strong>Pitfall 3: Teaching KQs as a formula.</strong> "Just add 'To what extent' to the beginning and you have a KQ." This produces grammatically correct but intellectually empty questions.
+<em>Fix:</em> Insist that Level 1 puzzlement is genuine. A question that starts from real confusion will always be more productive than a question that starts from a template.</p>
+<p><strong>Pitfall 4: Separating KQ development from assessment.</strong> KQs are practised in class but only assessed in the exhibition and essay. Students learn to see KQs as something they produce for assessment, not as a thinking habit.
+<em>Fix:</em> Make KQs a daily routine. The Three-Minute Puzzlement Journal (Level 1) and regular Question Flooding (Level 2) build the habit. By Year 2, students should be generating KQs spontaneously in their other subjects.</p>
+<hr />
+<h2 id="connecting-to-the-twelve-tok-concepts">Connecting to the Twelve TOK Concepts</h2>
+<p>The IB's twelve core concepts provide the conceptual vocabulary that turns raw puzzlement into sophisticated inquiry. Here is how each concept can serve as a prompt for KQ generation at different levels:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Level 2 Prompt</th>
+<th>Level 4–5 Example KQ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evidence</strong></td>
+<td>"What would convince you this is true?"</td>
+<td>"How do standards of evidence differ across AOKs, and what are the implications when they conflict?"</td>
+</tr>
+<tr>
+<td><strong>Certainty</strong></td>
+<td>"How sure are you? What could change your mind?"</td>
+<td>"Is absolute certainty achievable in any AOK, and is it always desirable?"</td>
+</tr>
+<tr>
+<td><strong>Truth</strong></td>
+<td>"Is this true? Could it be true and misleading at the same time?"</td>
+<td>"To what extent is truth a property of knowledge claims, and to what extent is it a property of the relationship between knower and claim?"</td>
+</tr>
+<tr>
+<td><strong>Interpretation</strong></td>
+<td>"Could someone read this differently than you do?"</td>
+<td>"How does the necessity of interpretation affect the reliability of knowledge in the Human Sciences?"</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>"Who benefits from this being considered knowledge?"</td>
+<td>"To what extent does the power to define what counts as knowledge shape the knowledge itself?"</td>
+</tr>
+<tr>
+<td><strong>Justification</strong></td>
+<td>"Why should I believe this?"</td>
+<td>"If different AOKs use different standards of justification, what does this imply about the unity of knowledge?"</td>
+</tr>
+<tr>
+<td><strong>Explanation</strong></td>
+<td>"Why did this happen?"</td>
+<td>"Can an explanation be satisfying without being true, and what does this reveal about what we want from knowledge?"</td>
+</tr>
+<tr>
+<td><strong>Objectivity</strong></td>
+<td>"Could someone else see this differently?"</td>
+<td>"To what extent is objectivity possible when the knower's identity shapes what they notice?"</td>
+</tr>
+<tr>
+<td><strong>Perspective</strong></td>
+<td>"Who is saying this and why?"</td>
+<td>"When perspectives conflict, is the goal to choose the correct one or to understand why they differ?"</td>
+</tr>
+<tr>
+<td><strong>Culture</strong></td>
+<td>"Would this make sense in a different place or time?"</td>
+<td>"How does cultural context shape what a community considers to be knowledge?"</td>
+</tr>
+<tr>
+<td><strong>Values</strong></td>
+<td>"What matters here, and to whom?"</td>
+<td>"To what extent do values influence what questions are asked, and does this represent a limitation or a strength of knowledge?"</td>
+</tr>
+<tr>
+<td><strong>Responsibility</strong></td>
+<td>"Who is responsible for how this knowledge is used?"</td>
+<td>"Does the knower bear responsibility for the consequences of knowledge they produce, even if those consequences are unintended?"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="links-to-related-resources">Links to Related Resources</h2>
+<ul>
+<li><a href="A1-Curriculum-Hook-Map.html">A1-Curriculum-Hook-Map</a> — Ready-to-use knowledge question stems mapped to competencies</li>
+<li><a href="A2-Pedagogical-Playbook.html">A2-Pedagogical-Playbook</a> — Lesson sequences that embed KQ development</li>
+<li><a href="A5-TOK-Year-1-and-Year-2-Scope-and-Sequence.html">A5-TOK-Year-1-and-Year-2-Scope-and-Sequence</a> — Where each scaffolding level fits in the two-year course</li>
+<li><a href="Ch-04-Critical-Thinking.html">Ch-04-Critical-Thinking</a> — The critical thinking competency that underlies KQ formulation</li>
+<li><a href="Ch-15-Metacognition-and-Self-Regulation.html">Ch-15-Metacognition-and-Self-Regulation</a> — The metacognitive awareness that makes KQ generation possible</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>International Baccalaureate Organization. (2019). <em>Teachers' perspectives on incorporating TOK into everyday teaching</em>. IBO Research. https://ibo.org/globalassets/new-structure/research/pdfs/teachers-perspectives-on-incorporating-tok-into-teaching-final-report.pdf</li>
+<li>International Baccalaureate Organization. (2022). <em>Theory of knowledge guide (First assessment 2022)</em>. IBO.</li>
+<li>Wiggins, G., &amp; McTighe, J. (2005). <em>Understanding by design</em> (Expanded 2nd ed.). ASCD.</li>
+<li>Ritchhart, R., Church, M., &amp; Morrison, K. (2011). <em>Making thinking visible: How to promote engagement, understanding, and independence for all learners</em>. Jossey-Bass.</li>
+</ul>
+    </article>
+    <footer class="page-footer">
+      <p>Part of <em>Developing Learners, Developing Individuals</em> · A Research Foundation for Expanding IB Theory of Knowledge</p>
+      <p class="build-time">Last built: 2026-03-31</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Desktop collapse ───────────────────────────────────────────────────────
+  const layout    = document.getElementById('layout');
+  const collapser = document.getElementById('sidebarCollapser');
+  const sidebar   = document.getElementById('sidebar');
+  const mobToggle = document.getElementById('sidebarToggle');
+  const SK_DESK   = 'sidebar-desktop-open';
+
+  function setDesktopSidebar(open) {
+    layout.classList.toggle('sidebar-collapsed', !open);
+    collapser.querySelector('.collapser-icon').innerHTML = open ? '&#8249;' : '&#8250;';
+    collapser.setAttribute('aria-label', open ? 'Collapse sidebar' : 'Expand sidebar');
+    try { sessionStorage.setItem(SK_DESK, open ? '1' : '0'); } catch(e) {}
+  }
+
+  collapser.addEventListener('click', () => setDesktopSidebar(layout.classList.contains('sidebar-collapsed')));
+
+  try { setDesktopSidebar(sessionStorage.getItem(SK_DESK) !== '0'); }
+  catch(e) { setDesktopSidebar(true); }
+
+  // ── Mobile sidebar ─────────────────────────────────────────────────────────
+  mobToggle.addEventListener('click', () => {
+    const open = !sidebar.classList.contains('mobile-open');
+    sidebar.classList.toggle('mobile-open', open);
+    mobToggle.classList.toggle('active', open);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth < 900 && sidebar.classList.contains('mobile-open')
+        && !sidebar.contains(e.target) && e.target !== mobToggle) {
+      sidebar.classList.remove('mobile-open');
+      mobToggle.classList.remove('active');
+    }
+  });
+
+  // ── Search (full-text across all chapters) ─────────────────────────────────
+  // Index is loaded synchronously via <script src="search-index.js"> in <head>,
+  // so window.SEARCH_INDEX is always available — no fetch, works with file://
+  const searchInput   = document.getElementById('sidebarSearch');
+  const searchResults = document.getElementById('searchResults');
+  const partsDiv      = document.getElementById('sidebarParts');
+
+  function highlight(text, query) {
+    if (!query || !text) return text || '';
+    const lower = text.toLowerCase();
+    const qLow  = query.toLowerCase();
+    const qLen  = query.length;
+    let result = '';
+    let i = 0;
+    while (i < text.length) {
+      const idx = lower.indexOf(qLow, i);
+      if (idx === -1) { result += text.slice(i); break; }
+      result += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + qLen) + '</mark>';
+      i = idx + qLen;
+    }
+    return result;
+  }
+
+  function excerpt(body, query) {
+    if (!body || !query) return '';
+    const idx = body.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return '';
+    const start = Math.max(0, idx - 40);
+    const end   = Math.min(body.length, idx + 100);
+    return (start > 0 ? '…' : '') + highlight(body.slice(start, end), query) + '…';
+  }
+
+  // Find the first section in an item whose text or heading contains the query word
+  function findSection(item, word) {
+    if (!item.sections) return null;
+    return item.sections.find(function(s) {
+      return s.text.toLowerCase().indexOf(word) !== -1
+          || s.heading.toLowerCase().indexOf(word) !== -1;
+    }) || null;
+  }
+
+  // Build a deep link: page.html?q=term#section-id
+  function deepLink(item, q, section) {
+    const qEnc = encodeURIComponent(q);
+    return item.href + '?q=' + qEnc + (section ? '#' + section.id : '');
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+    if (!q) {
+      searchResults.hidden = true;
+      partsDiv.hidden = false;
+      return;
+    }
+    partsDiv.hidden = true;
+    searchResults.hidden = false;
+
+    const index = window.SEARCH_INDEX || [];
+    const words = q.toLowerCase().split(' ').filter(function(w) { return w.length > 0; });
+
+    const hits = index.filter(function(item) {
+      const sectionText = (item.sections || []).map(function(s) {
+        return s.heading + ' ' + s.text;
+      }).join(' ');
+      const blob = [item.title, item.summary, item.part,
+                    (item.tags || []).join(' '), sectionText].join(' ').toLowerCase();
+      return words.every(function(w) { return blob.indexOf(w) !== -1; });
+    }).slice(0, 15);
+
+    if (hits.length === 0) {
+      searchResults.innerHTML = '<li class="search-no-results">No results found</li>';
+      return;
+    }
+
+    const firstWord = words[0];
+    searchResults.innerHTML = hits.map(function(item) {
+      const section   = findSection(item, firstWord);
+      const href      = deepLink(item, q, section);
+      const titleHtml = highlight(item.title, q);
+      const tags = (item.tags || []).slice(0, 3)
+        .map(function(t) { return '<span class="search-tag">' + t + '</span>'; }).join('');
+
+      // Snippet: prefer section heading + excerpt, fall back to summary
+      let snip = '';
+      if (section) {
+        const secLabel = '<span class="search-section">§ ' + highlight(section.heading, q) + '</span>';
+        const inHeading = section.heading.toLowerCase().indexOf(firstWord) !== -1;
+        snip = secLabel + (inHeading ? '' : '<span class="search-summary">' + excerpt(section.text, firstWord) + '</span>');
+      } else if (item.summary) {
+        snip = '<span class="search-summary">' + highlight(item.summary.slice(0, 110), q) + '…</span>';
+      }
+
+      return '<li><a href="' + href + '"><span class="search-title">' + titleHtml + '</span>' + tags + snip + '</a></li>';
+    }).join('');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) { renderResults(e.target.value); });
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { searchInput.value = ''; renderResults(''); searchInput.blur(); }
+    });
+  }
+
+  // ── Arrival highlight: light up matched text when coming from search ──────
+  (function arrivalHighlight() {
+    const q = new URLSearchParams(location.search).get('q');
+    if (!q) return;
+
+    const article = document.querySelector('article');
+    if (!article) return;
+
+    const marks = [];
+
+    function walkNode(node) {
+      if (node.nodeType === 3) {
+        const text  = node.textContent;
+        const lower = text.toLowerCase();
+        const qLow  = q.toLowerCase();
+        const qLen  = q.length;
+        let i = 0;
+        const frags = [];
+        while (i < text.length) {
+          const idx = lower.indexOf(qLow, i);
+          if (idx === -1) { frags.push(document.createTextNode(text.slice(i))); break; }
+          if (idx > i) frags.push(document.createTextNode(text.slice(i, idx)));
+          const m = document.createElement('mark');
+          m.className = 'arrival-hl';
+          m.textContent = text.slice(idx, idx + qLen);
+          frags.push(m);
+          marks.push(m);
+          i = idx + qLen;
+        }
+        if (frags.length > 1) {
+          const parent = node.parentNode;
+          frags.forEach(function(f) { parent.insertBefore(f, node); });
+          parent.removeChild(node);
+        }
+      } else if (node.nodeType === 1
+          && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE'
+          && node.tagName !== 'MARK'  && node.tagName !== 'A') {
+        Array.from(node.childNodes).forEach(walkNode);
+      }
+    }
+
+    walkNode(article);
+
+    // Scroll the first match into view (if we didn't land on a hash)
+    if (marks.length > 0 && !location.hash) {
+      marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Fade out after 4 s, then remove the <mark> nodes cleanly
+    setTimeout(function() {
+      marks.forEach(function(m) {
+        m.style.transition = 'background 1.5s, color 1.5s';
+        m.style.background = 'transparent';
+        m.style.color = 'inherit';
+      });
+      setTimeout(function() {
+        marks.forEach(function(m) {
+          if (m.parentNode) {
+            m.parentNode.insertBefore(document.createTextNode(m.textContent), m);
+            m.parentNode.removeChild(m);
+          }
+        });
+      }, 1600);
+    }, 4000);
+  })();
+
+  // ── Inline section nav (only for the active chapter) ──────────────────────
+  (function buildInlineSectionNav() {
+    const article    = document.querySelector('article');
+    const activeLink = document.querySelector('.chapter-list a.active, .subchapter-list a.active');
+    if (!article || !activeLink) return;
+
+    const headings = Array.from(article.querySelectorAll('h2, h3'));
+    if (headings.length < 2) return;
+
+    // Ensure IDs exist (python-markdown toc extension adds these, but just in case)
+    headings.forEach((h, i) => { if (!h.id) h.id = 'sec-' + i; });
+
+    // Build inline <ul> to insert after the active chapter link
+    const ul = document.createElement('ul');
+    ul.className = 'inline-section-nav';
+    ul.innerHTML = headings.map(h => {
+      const cls = h.tagName === 'H3' ? ' class="sec-h3"' : '';
+      return '<li' + cls + '><a class="sec-link" href="#' + h.id + '">' + h.textContent + '</a></li>';
+    }).join('');
+
+    // Insert right inside the active <li>, below the chapter link
+    activeLink.parentElement.appendChild(ul);
+
+    // Scrollspy — highlight current section in the inline nav
+    const links = ul.querySelectorAll('a.sec-link');
+    let activeId = null;
+
+    function setActive(id) {
+      if (id === activeId) return;
+      activeId = id;
+      links.forEach(a => a.classList.toggle('sec-active', a.getAttribute('href') === '#' + id));
+      // Scroll the active link into view within the sidebar
+      const activeA = ul.querySelector('a.sec-active');
+      if (activeA) activeA.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '0px 0px -65% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+
+    // Scroll fallback
+    let t;
+    window.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        let cur = headings[0];
+        headings.forEach(h => { if (h.getBoundingClientRect().top <= 80) cur = h; });
+        if (cur) setActive(cur.id);
+      }, 50);
+    }, { passive: true });
+  })();
+
+})();
+</script>
+</body>
+</html>

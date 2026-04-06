@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compounding and Patience — Developing Learners, Developing Individuals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="search-index.js"></script>
+</head>
+<body>
+
+<!-- Mobile hamburger -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Desktop sidebar collapse tab -->
+<button class="sidebar-collapser" id="sidebarCollapser" aria-label="Toggle sidebar">
+  <span class="collapser-icon">&#8249;</span>
+</button>
+
+<div class="layout" id="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" id="sidebarNav">
+<a class="sidebar-brand" href="00-Table-of-Contents.html"><span>Developing Learners, Developing Individuals</span></a>
+<div class="sidebar-search"><input type="search" id="sidebarSearch" placeholder="Search chapters…" autocomplete="off" spellcheck="false"></div>
+<ul class="search-results" id="searchResults" hidden></ul>
+<div id="sidebarParts">
+<details class="part-group">
+  <summary class="part-title">Part I — The Case for Change</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-I-Introduction.html">Part I Overview</a>
+    </li>
+    <li>
+      <a href="Ch-01-Introduction.html">Chapter 1 — Why Core Competencies Matter</a>
+    </li>
+    <li>
+      <a href="Ch-02-21st-Century-Skills-Landscape.html">Chapter 2 — The 21st-Century Skills Landscape</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-03-Skills-at-Risk-in-a-Digital-Age.html">Chapter 3 — Skills at Risk in a Digital Age</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-03a-Six-Skills-Under-Pressure.html">3a — Six Skills Under Pressure</a></li>
+        <li><a href="Ch-03b-Responses-and-Strategies.html">3b — Responses & Strategies</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part II — Core Competencies</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-II-Introduction.html">Part II Overview</a>
+    </li>
+    <li>
+      <a href="Ch-04-Critical-Thinking.html">Chapter 4 — Critical Thinking</a>
+    </li>
+    <li>
+      <a href="Ch-05-Collaboration-and-Teamwork.html">Chapter 5 — Collaboration & Teamwork</a>
+    </li>
+    <li>
+      <a href="Ch-06-Information-and-Digital-Literacy.html">Chapter 6 — Information & Digital Literacy</a>
+    </li>
+    <li>
+      <a href="Ch-07-Self-Directed-Learning.html">Chapter 7 — Self-Directed Learning</a>
+    </li>
+    <li>
+      <a href="Ch-08-Leadership-Communication-and-Global-Competence.html">Chapter 8 — Leadership, Communication & Global Competence</a>
+    </li>
+    <li>
+      <a href="Ch-09-Comparing-Competency-Frameworks.html">Chapter 9 — Comparing Competency Frameworks</a>
+    </li>
+    <li>
+      <a href="Ch-10-IB-Approaches-to-Learning.html">Chapter 10 — IB Approaches to Learning</a>
+    </li>
+    <li>
+      <a href="Ch-11-Creativity-and-Creative-Thinking.html">Chapter 11 — Creativity & Creative Thinking</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part III — How Learning Works</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-III-Introduction.html">Part III Overview</a>
+    </li>
+    <li>
+      <a href="Ch-12-Memory-and-Levels-of-Processing.html">Chapter 12 — Memory & Levels of Processing</a>
+    </li>
+    <li>
+      <a href="Ch-13-Retrieval-Practice-and-Spaced-Learning.html">Chapter 13 — Retrieval Practice & Spaced Learning</a>
+    </li>
+    <li>
+      <a href="Ch-14-Cognitive-Load-and-Guided-Instruction.html">Chapter 14 — Cognitive Load & Guided Instruction</a>
+    </li>
+    <li>
+      <a href="Ch-15-Metacognition-and-Self-Regulation.html">Chapter 15 — Metacognition & Self-Regulation</a>
+    </li>
+    <li>
+      <a href="Ch-16-Growth-Mindset.html">Chapter 16 — Growth Mindset</a>
+    </li>
+    <li>
+      <a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Chapter 17 — Productive Struggle & Desirable Difficulties</a>
+    </li>
+    <li>
+      <a href="Ch-18-Learning-to-Learn.html">Chapter 18 — Learning to Learn: Every Student is a Teacher</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-19-Motivation-Autonomy-and-the-Adult-Learner.html">Chapter 19 — Motivation, Autonomy & the Adult Learner</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-19a-Motivation-and-Behavioural-Design.html">19a — Motivation & Behavioural Design</a></li>
+        <li><a href="Ch-19b-Andragogy-and-Self-Determination.html">19b — Andragogy & Self-Determination</a></li>
+      </ul>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-20-The-Emotional-Learner-Wellbeing-Resilience-and-Grit.html">Chapter 20 — The Emotional Learner: Wellbeing, Resilience & Grit</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-20a-Stress-Resilience-and-Discipline.html">20a — Stress Mindset, Resilience & Discipline</a></li>
+        <li><a href="Ch-20b-Philosophy-of-Resilience-and-Character.html">20b — Philosophy of Resilience & Character</a></li>
+        <li><a href="Ch-20c-Grit-Wellbeing-and-Practical-Strategies.html">20c — Grit, Wellbeing & Practical Strategies</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part IV — Pedagogy in Practice</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-IV-Introduction.html">Part IV Overview</a>
+    </li>
+    <li>
+      <a href="Ch-21-Building-Thinking-Classrooms.html">Chapter 21 — Building Thinking Classrooms</a>
+    </li>
+    <li>
+      <a href="Ch-22-Principles-of-Effective-Instruction.html">Chapter 22 — Principles of Effective Instruction</a>
+    </li>
+    <li>
+      <a href="Ch-23-Teaching-Techniques-and-Thinking-Routines.html">Chapter 23 — Teaching Techniques & Thinking Routines</a>
+    </li>
+    <li>
+      <a href="Ch-24-Effective-Feedback.html">Chapter 24 — Effective Feedback</a>
+    </li>
+    <li>
+      <a href="Ch-25-Assessment-Literacy-Students-as-Assessment-Agents.html">Chapter 25 — Assessment Literacy: Students as Assessment Agents</a>
+    </li>
+    <li>
+      <a href="Ch-26-Teaching-Writing.html">Chapter 26 — Teaching Writing</a>
+    </li>
+    <li>
+      <a href="Ch-27-Project-Based-Learning.html">Chapter 27 — Project-Based Learning</a>
+    </li>
+    <li>
+      <a href="Ch-28-Reflective-Practice.html">Chapter 28 — Reflective Practice</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part V — The Danish Context</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-V-Introduction.html">Part V Overview</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-29-Dannelse-and-Character-Formation.html">Chapter 29 — Dannelse & Character Formation</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-29a-Dannelse-Theory-and-Research.html">29a — Theory & Research Foundations</a></li>
+        <li><a href="Ch-29b-Comparative-Perspectives-and-Course-Design.html">29b — Comparative Perspectives & Course Design</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="Ch-30-Danish-Education-Reforms.html">Chapter 30 — Danish Education Reforms</a>
+    </li>
+    <li>
+      <a href="Ch-31-Case-Study-Silkeborg-Gymnasium.html">Chapter 31 — Case Study: Silkeborg Gymnasium</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Part VI — Implementation & the Future</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-VI-Introduction.html">Part VI Overview</a>
+    </li>
+    <li>
+      <a href="Ch-32-AI-in-Education.html">Chapter 32 — AI in Education</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-33-Implementation-Science.html">Chapter 33 — Implementation Science</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-33a-Frameworks-and-Blueprint.html">33a — Frameworks & 90-Day Blueprint</a></li>
+        <li><a href="Ch-33b-Evaluation-and-Adaptive-Design.html">33b — Evaluation & Adaptive Design</a></li>
+      </ul>
+    </li>
+    <li class="has-subchapters">
+      <a href="Ch-34-Practical-Strategies-for-Schools.html">Chapter 34 — Practical Strategies for Schools</a>
+      <ul class="subchapter-list">
+        <li><a href="Ch-34a-Classroom-Strategies-and-Routines.html">34a — Classroom Strategies & Routines</a></li>
+        <li><a href="Ch-34b-AI-Agents-and-Implementation.html">34b — AI Agents & Implementation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="Ch-35-Being-More-Human-in-an-AI-Age.html">Chapter 35 — Being More Human in an AI Age</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group" open>
+  <summary class="part-title">Part VII — Lessons from the Past</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Part-VII-Introduction.html">Part VII Overview</a>
+    </li>
+    <li>
+      <a href="Ch-36-Failure-and-Overreach.html">Chapter 36 — Failure & Overreach</a>
+    </li>
+    <li>
+      <a href="Ch-37-Discipline-and-Self-Mastery.html">Chapter 37 — Discipline & Self-Mastery</a>
+    </li>
+    <li>
+      <a href="Ch-38-Compounding-and-Patience.html" class="active">Chapter 38 — Compounding & Patience</a>
+    </li>
+    <li>
+      <a href="Ch-39-Responsibility-and-Leaving-Things-Better.html">Chapter 39 — Responsibility & Leaving Things Better</a>
+    </li>
+    <li>
+      <a href="Ch-40-Attention-and-Presence.html">Chapter 40 — Attention & Presence</a>
+    </li>
+    <li>
+      <a href="Ch-41-The-Adult-Threshold-and-Coming-of-Age.html">Chapter 41 — The Adult Threshold & Coming of Age</a>
+    </li>
+    <li>
+      <a href="Ch-42-Knowledge-Wisdom-and-Humility.html">Chapter 42 — Knowledge, Wisdom & Humility</a>
+    </li>
+  </ul>
+</details>
+<details class="part-group">
+  <summary class="part-title">Appendix — TOK Connections</summary>
+  <ul class="chapter-list">
+    <li>
+      <a href="_Appendix-Introduction.html">Appendix Overview</a>
+    </li>
+    <li>
+      <a href="A1-Curriculum-Hook-Map.html">A1 — Curriculum Hook Map</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="A2-Pedagogical-Playbook.html">A2 — Pedagogical Playbook</a>
+      <ul class="subchapter-list">
+        <li><a href="A2a-Six-Lesson-Mini-Sequence.html">A2a — Six-Lesson Mini-Sequence</a></li>
+        <li><a href="A2b-Protocols-Assessment-and-Troubleshooting.html">A2b — Protocols, Assessment & Troubleshooting</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="A3-Essay-Angles.html">A3 — Essay Angles</a>
+    </li>
+    <li class="has-subchapters">
+      <a href="A4-Exhibition-Object-Ideas.html">A4 — Exhibition Object Ideas</a>
+      <ul class="subchapter-list">
+        <li><a href="A4a-Object-Bank-by-Prompt.html">A4a — Object Bank by Prompt</a></li>
+        <li><a href="A4b-Exhibition-Studio-and-Quality-Guide.html">A4b — Exhibition Studio & Quality Guide</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="A5-TOK-Year-1-and-Year-2-Scope-and-Sequence.html">A5 — Y1/Y2 Scope & Sequence</a>
+    </li>
+    <li>
+      <a href="A6-Knowledge-Questions-from-the-Ground-Up.html">A6 — Knowledge Questions from the Ground Up</a>
+    </li>
+  </ul>
+</details>
+</div>
+</nav>
+  </aside>
+
+  <main class="content" id="main">
+    <article>
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="00-Table-of-Contents.html">Contents</a><span class="sep">›</span><span>VII — Lessons from the Past</span></nav>
+      <h1 id="chapter-38-compounding-and-patience">Chapter 38 — Compounding and Patience</h1>
+<div class="callout callout-abstract"><div class="callout-title"><span class="callout-icon">◉</span> Overview</div><div class="callout-body"><p>Humans are consistently poor at understanding exponential processes. We think linearly: one unit of effort produces one unit of result. But the most important processes in learning, skill development, and personal growth are nonlinear — they compound. This chapter examines three ancient parables that make the abstract concept of compounding concrete: the Chinese bamboo tree, the Chinese farmer's luck ("we'll see"), and Aesop's tortoise and hare. Each connects to the research on cumulative advantage, habit formation, and the compounding gap discussed in <a href="Ch-03a-Six-Skills-Under-Pressure.html">Ch-03a-Six-Skills-Under-Pressure</a>.</p></div></div>
+
+<hr />
+<h2 id="why-compounding-is-hard-to-see">Why Compounding Is Hard to See</h2>
+<p>The human brain evolved to detect immediate, proportional relationships between effort and result. Plant a seed, see a sprout. Swing the axe, feel the wood split. But the processes that matter most in education — vocabulary acquisition, reading fluency, metacognitive skill, mathematical reasoning — follow exponential rather than linear trajectories. Early effort produces little visible result; later effort produces disproportionate returns (Stanovich, 1986).</p>
+<p>This mismatch between expectation and reality is what Stango and Zinman (2009) call <em>exponential growth bias</em>: fewer than 25% of adults can correctly estimate the result of a simple compounding process. When students do not see proportional returns from early effort, they conclude the effort is not working — and they stop. Ancient stories about patience provide an emotional counterweight to this cognitive bias.</p>
+<hr />
+<h2 id="the-chinese-bamboo-tree">The Chinese Bamboo Tree</h2>
+<p>The Chinese bamboo tree (<em>Phyllostachys edulis</em>, moso bamboo) is the subject of a widely told parable. A farmer plants a bamboo seed, waters it, and tends the soil. For the first year, nothing visible happens. The second year, nothing. The third year, nothing. The fourth year, still nothing. In the fifth year, the bamboo shoots upward — growing up to 27 metres in a single growing season (Liese &amp; Köhl, 2015).</p>
+<p>The question the parable poses is: did the bamboo grow in six weeks, or in five years? The answer, of course, is five years. During the invisible period, the bamboo was developing an extensive root system — the foundation without which the explosive growth would be impossible.</p>
+<h3 id="connection-to-learning-research">Connection to Learning Research</h3>
+<p>The bamboo parable maps precisely to the distinction between <em>retrieval strength</em> and <em>storage strength</em> in Bjork's model of memory (Bjork &amp; Bjork, 2011). During the "invisible" period of learning — when effort does not yet produce visible performance improvement — storage strength is building. The knowledge is being encoded, connected, and consolidated. The visible performance gains come later, when retrieval strength catches up.</p>
+<p>For students, the bamboo story reframes a frustrating experience: "I've been studying for weeks and I'm not getting better." The response is: "You're growing roots. The shoot comes later — but only if you keep watering."</p>
+<div class="callout callout-tip"><div class="callout-title"><span class="callout-icon">◆</span> Teaching Moment</div><div class="callout-body"><p>The bamboo parable is particularly useful during the first weeks of a new skill or subject, when students are most vulnerable to abandoning effortful strategies. Revisit it explicitly when students report feeling stuck.</p></div></div>
+
+<hr />
+<h2 id="the-farmers-luck-well-see">The Farmer's Luck: "We'll See"</h2>
+<p>A Chinese parable, sometimes attributed to Taoist tradition and popularised in the West through Alan Watts and other writers, tells of an old farmer whose horse runs away. His neighbours say, "How terrible!" The farmer replies, "We'll see." The next day the horse returns, bringing wild horses with it. "How wonderful!" say the neighbours. "We'll see," says the farmer. The farmer's son tries to ride a wild horse, breaks his leg. "How terrible!" "We'll see." The army comes to conscript young men for war; the son is spared because of his broken leg. "How wonderful!" "We'll see."</p>
+<h3 id="why-this-story-matters-for-learners">Why This Story Matters for Learners</h3>
+<p>The farmer's story is about <em>temporal perspective</em> — the recognition that the significance of any single event depends on a timescale we cannot fully see. This connects to two research findings. First, the <em>present bias</em> identified in behavioural economics: people systematically overweight immediate outcomes and underweight future consequences (Laibson, 1997). Students who receive a poor grade on a formative assessment experience it as a verdict rather than as a data point in a longer trajectory.</p>
+<p>Second, the story models <em>equanimity</em> — the capacity to respond to both success and failure without being destabilised by either. This is precisely the <em>mastery orientation</em> that growth mindset research promotes (Dweck, 2006): neither crushed by setbacks nor complacent after achievements. The farmer's "we'll see" is the emotional posture of someone who understands compounding — the recognition that any single data point is insufficient to determine the trajectory.</p>
+<div class="callout callout-example"><div class="callout-title"><span class="callout-icon">»</span> For Reflection</div><div class="callout-body"><p>Think about a recent experience you initially interpreted as "good" or "bad." With more time and perspective, did the significance change? How does the farmer's "we'll see" perspective change the way you respond to grades, feedback, or unexpected outcomes?</p></div></div>
+
+<hr />
+<h2 id="aesops-tortoise-and-hare">Aesop's Tortoise and Hare</h2>
+<p>The fable of the tortoise and the hare (Aesop, c. 600 BCE) is so widely known that it risks feeling trivial. But a closer reading reveals a story that maps remarkably well to the research on learning strategies.</p>
+<p>The hare is fast — representing high <em>retrieval strength</em>. The hare's speed creates an <em>illusion of mastery</em>: because performance is strong in the short term, the hare assumes the race is won. The hare naps. The tortoise, meanwhile, represents sustained, effortful practice — low initial performance but consistent engagement that builds <em>storage strength</em> over time (Bjork &amp; Bjork, 2011).</p>
+<h3 id="the-nap-as-counterproductive-adjustment">The Nap as Counterproductive Adjustment</h3>
+<p>What the hare does is precisely what Justin Sung (2025) calls a <em>counterproductive adjustment</em> — the abandonment of effort based on a misjudgement about one's current position. The hare's error is not laziness in the moral sense; it is a failure of metacognitive monitoring. The hare cannot accurately assess where the tortoise is because the hare is only tracking short-term performance, not long-term trajectory.</p>
+<p>For students, the tortoise-and-hare story reframes "slow" as a strategy rather than a limitation. The student who reads carefully, takes notes, reviews with spaced practice, and works through problems methodically may appear to fall behind peers who skim, cram, and perform well on immediate assessments. But the research consistently shows that the tortoise strategy produces superior long-term retention and transfer (Dunlosky et al., 2013).</p>
+<hr />
+<h2 id="compound-growth-in-islamic-and-jewish-wisdom-traditions">Compound Growth in Islamic and Jewish Wisdom Traditions</h2>
+<p>The concept of compounding — small, consistent actions producing disproportionate long-term results — appears across wisdom traditions beyond the East Asian parables.</p>
+<h3 id="islamic-tradition-the-obligation-of-continuous-improvement">Islamic Tradition: The Obligation of Continuous Improvement</h3>
+<p>In the Islamic tradition, the concept of <em>ihsan</em> — striving for excellence in all things — and the hadith teaching that each day a believer should be better than the day before, establish a framework of continuous, incremental improvement. The Prophet Muhammad's reported saying, "The most beloved deed to Allah is the most consistent, even if it is small" (<em>Sahih al-Bukhari</em>, Book 76, Hadith 472), articulates a compounding philosophy: consistency of practice matters more than intensity of any single effort.</p>
+<h3 id="jewish-tradition-torah-study-as-daily-practice">Jewish Tradition: Torah Study as Daily Practice</h3>
+<p>The Talmudic tradition emphasises that Torah study is not an event but a daily practice. The Mishnah (Pirkei Avot 2:5) teaches: "Do not say 'when I have free time, I will study,' for you may never have free time." This injunction against deferral connects directly to the procrastination research in <a href="Ch-19a-Motivation-and-Behavioural-Design.html">Ch-19a-Motivation-and-Behavioural-Design</a> — the recognition that the conditions for starting will never be perfect, and that the habit of daily engagement is itself the foundation for all subsequent growth.</p>
+<hr />
+<h2 id="the-compounding-metaphor-applied-to-learning">The Compounding Metaphor Applied to Learning</h2>
+<p>These ancient stories converge on the same insight that modern research has formalised: <strong>consistent, sustained effort over time produces nonlinear returns.</strong> The bamboo tree's roots build silently. The farmer's equanimity sustains effort through setbacks. The tortoise's consistency defeats the hare's bursts.</p>
+<p>In educational terms, this is the <em>Matthew Effect</em> — the cumulative advantage by which early skills compound into later mastery (Stanovich, 1986). A student who reads slightly more this week reads slightly better next week, which makes reading slightly more enjoyable, which increases reading volume, which further improves skill. The compounding is invisible at any given point but transformative over time.</p>
+<div class="callout callout-info"><div class="callout-title"><span class="callout-icon">ℹ</span> Key Concept — The Compounding Gap</div><div class="callout-body"><p>The <em>compounding gap</em> is the period between the investment of effort and the visible emergence of results. It is the most dangerous period in any learning trajectory because the absence of visible progress invites the conclusion that the strategy is not working. Ancient parables about patience help students endure this gap by providing an emotional and narrative framework for trusting the process (see also <a href="Ch-03a-Six-Skills-Under-Pressure.html">Ch-03a-Six-Skills-Under-Pressure</a>, Risk 6).</p></div></div>
+
+<hr />
+<h2 id="connections">Connections</h2>
+<p>This chapter connects to several themes developed elsewhere in the curriculum:</p>
+<ul>
+<li><strong>Skills at risk — the compounding gap</strong> (<a href="Ch-03a-Six-Skills-Under-Pressure.html">Ch-03a-Six-Skills-Under-Pressure</a>) — the quantitative treatment of exponential growth bias and mathematical innumeracy</li>
+<li><strong>Productive struggle</strong> (<a href="Ch-17-Productive-Struggle-and-Desirable-Difficulties.html">Ch-17-Productive-Struggle-and-Desirable-Difficulties</a>) — the tortoise strategy as an ancient articulation of desirable difficulties</li>
+<li><strong>Growth mindset</strong> (<a href="Ch-16-Growth-Mindset.html">Ch-16-Growth-Mindset</a>) — the farmer's equanimity as a model of mastery orientation</li>
+<li><strong>Motivation and behavioural design</strong> (<a href="Ch-19a-Motivation-and-Behavioural-Design.html">Ch-19a-Motivation-and-Behavioural-Design</a>) — procrastination as the failure to start the compounding process; the Talmudic injunction against deferral</li>
+<li><strong>Memory and levels of processing</strong> (<a href="Ch-12-Memory-and-Levels-of-Processing.html">Ch-12-Memory-and-Levels-of-Processing</a>) — the bamboo root system as a metaphor for storage strength during the invisible phase of learning</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Bjork, R. A., &amp; Bjork, E. L. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. In M. A. Gernsbacher et al. (Eds.), <em>Psychology and the Real World</em> (pp. 56–64). Worth.</li>
+<li>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students' learning with effective learning techniques. <em>Psychological Science in the Public Interest</em>, <em>14</em>(1), 4–58.</li>
+<li>Dweck, C. S. (2006). <em>Mindset: The New Psychology of Success</em>. Random House.</li>
+<li>Laibson, D. (1997). Golden eggs and hyperbolic discounting. <em>Quarterly Journal of Economics</em>, <em>112</em>(2), 443–478.</li>
+<li>Liese, W., &amp; Köhl, M. (Eds.). (2015). <em>Bamboo: The Plant and Its Uses</em>. Springer.</li>
+<li>Stanovich, K. E. (1986). Matthew effects in reading: Some consequences of individual differences in the acquisition of literacy. <em>Reading Research Quarterly</em>, <em>21</em>(4), 360–407.</li>
+<li>Stango, V., &amp; Zinman, J. (2009). Exponential growth bias and household finance. <em>Journal of Finance</em>, <em>64</em>(6), 2807–2849.</li>
+<li>Sung, J. (2025). Counterproductive adjustment in self-regulated learning. <em>National Institute of Education, Singapore</em>.</li>
+</ul>
+    </article>
+    <footer class="page-footer">
+      <p>Part of <em>Developing Learners, Developing Individuals</em> · A Research Foundation for Expanding IB Theory of Knowledge</p>
+      <p class="build-time">Last built: 2026-04-06</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Desktop collapse ───────────────────────────────────────────────────────
+  const layout    = document.getElementById('layout');
+  const collapser = document.getElementById('sidebarCollapser');
+  const sidebar   = document.getElementById('sidebar');
+  const mobToggle = document.getElementById('sidebarToggle');
+  const SK_DESK   = 'sidebar-desktop-open';
+
+  function setDesktopSidebar(open) {
+    layout.classList.toggle('sidebar-collapsed', !open);
+    collapser.querySelector('.collapser-icon').innerHTML = open ? '&#8249;' : '&#8250;';
+    collapser.setAttribute('aria-label', open ? 'Collapse sidebar' : 'Expand sidebar');
+    try { sessionStorage.setItem(SK_DESK, open ? '1' : '0'); } catch(e) {}
+  }
+
+  collapser.addEventListener('click', () => setDesktopSidebar(layout.classList.contains('sidebar-collapsed')));
+
+  try { setDesktopSidebar(sessionStorage.getItem(SK_DESK) !== '0'); }
+  catch(e) { setDesktopSidebar(true); }
+
+  // ── Mobile sidebar ─────────────────────────────────────────────────────────
+  mobToggle.addEventListener('click', () => {
+    const open = !sidebar.classList.contains('mobile-open');
+    sidebar.classList.toggle('mobile-open', open);
+    mobToggle.classList.toggle('active', open);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth < 900 && sidebar.classList.contains('mobile-open')
+        && !sidebar.contains(e.target) && e.target !== mobToggle) {
+      sidebar.classList.remove('mobile-open');
+      mobToggle.classList.remove('active');
+    }
+  });
+
+  // ── Search (full-text across all chapters) ─────────────────────────────────
+  // Index is loaded synchronously via <script src="search-index.js"> in <head>,
+  // so window.SEARCH_INDEX is always available — no fetch, works with file://
+  const searchInput   = document.getElementById('sidebarSearch');
+  const searchResults = document.getElementById('searchResults');
+  const partsDiv      = document.getElementById('sidebarParts');
+
+  function highlight(text, query) {
+    if (!query || !text) return text || '';
+    const lower = text.toLowerCase();
+    const qLow  = query.toLowerCase();
+    const qLen  = query.length;
+    let result = '';
+    let i = 0;
+    while (i < text.length) {
+      const idx = lower.indexOf(qLow, i);
+      if (idx === -1) { result += text.slice(i); break; }
+      result += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + qLen) + '</mark>';
+      i = idx + qLen;
+    }
+    return result;
+  }
+
+  function excerpt(body, query) {
+    if (!body || !query) return '';
+    const idx = body.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return '';
+    const start = Math.max(0, idx - 40);
+    const end   = Math.min(body.length, idx + 100);
+    return (start > 0 ? '…' : '') + highlight(body.slice(start, end), query) + '…';
+  }
+
+  // Find the first section in an item whose text or heading contains the query word
+  function findSection(item, word) {
+    if (!item.sections) return null;
+    return item.sections.find(function(s) {
+      return s.text.toLowerCase().indexOf(word) !== -1
+          || s.heading.toLowerCase().indexOf(word) !== -1;
+    }) || null;
+  }
+
+  // Build a deep link: page.html?q=term#section-id
+  function deepLink(item, q, section) {
+    const qEnc = encodeURIComponent(q);
+    return item.href + '?q=' + qEnc + (section ? '#' + section.id : '');
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+    if (!q) {
+      searchResults.hidden = true;
+      partsDiv.hidden = false;
+      return;
+    }
+    partsDiv.hidden = true;
+    searchResults.hidden = false;
+
+    const index = window.SEARCH_INDEX || [];
+    const words = q.toLowerCase().split(' ').filter(function(w) { return w.length > 0; });
+
+    const hits = index.filter(function(item) {
+      const sectionText = (item.sections || []).map(function(s) {
+        return s.heading + ' ' + s.text;
+      }).join(' ');
+      const blob = [item.title, item.summary, item.part,
+                    (item.tags || []).join(' '), sectionText].join(' ').toLowerCase();
+      return words.every(function(w) { return blob.indexOf(w) !== -1; });
+    }).slice(0, 15);
+
+    if (hits.length === 0) {
+      searchResults.innerHTML = '<li class="search-no-results">No results found</li>';
+      return;
+    }
+
+    const firstWord = words[0];
+    searchResults.innerHTML = hits.map(function(item) {
+      const section   = findSection(item, firstWord);
+      const href      = deepLink(item, q, section);
+      const titleHtml = highlight(item.title, q);
+      const tags = (item.tags || []).slice(0, 3)
+        .map(function(t) { return '<span class="search-tag">' + t + '</span>'; }).join('');
+
+      // Snippet: prefer section heading + excerpt, fall back to summary
+      let snip = '';
+      if (section) {
+        const secLabel = '<span class="search-section">§ ' + highlight(section.heading, q) + '</span>';
+        const inHeading = section.heading.toLowerCase().indexOf(firstWord) !== -1;
+        snip = secLabel + (inHeading ? '' : '<span class="search-summary">' + excerpt(section.text, firstWord) + '</span>');
+      } else if (item.summary) {
+        snip = '<span class="search-summary">' + highlight(item.summary.slice(0, 110), q) + '…</span>';
+      }
+
+      return '<li><a href="' + href + '"><span class="search-title">' + titleHtml + '</span>' + tags + snip + '</a></li>';
+    }).join('');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) { renderResults(e.target.value); });
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { searchInput.value = ''; renderResults(''); searchInput.blur(); }
+    });
+  }
+
+  // ── Arrival highlight: light up matched text when coming from search ──────
+  (function arrivalHighlight() {
+    const q = new URLSearchParams(location.search).get('q');
+    if (!q) return;
+
+    const article = document.querySelector('article');
+    if (!article) return;
+
+    const marks = [];
+
+    function walkNode(node) {
+      if (node.nodeType === 3) {
+        const text  = node.textContent;
+        const lower = text.toLowerCase();
+        const qLow  = q.toLowerCase();
+        const qLen  = q.length;
+        let i = 0;
+        const frags = [];
+        while (i < text.length) {
+          const idx = lower.indexOf(qLow, i);
+          if (idx === -1) { frags.push(document.createTextNode(text.slice(i))); break; }
+          if (idx > i) frags.push(document.createTextNode(text.slice(i, idx)));
+          const m = document.createElement('mark');
+          m.className = 'arrival-hl';
+          m.textContent = text.slice(idx, idx + qLen);
+          frags.push(m);
+          marks.push(m);
+          i = idx + qLen;
+        }
+        if (frags.length > 1) {
+          const parent = node.parentNode;
+          frags.forEach(function(f) { parent.insertBefore(f, node); });
+          parent.removeChild(node);
+        }
+      } else if (node.nodeType === 1
+          && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE'
+          && node.tagName !== 'MARK'  && node.tagName !== 'A') {
+        Array.from(node.childNodes).forEach(walkNode);
+      }
+    }
+
+    walkNode(article);
+
+    // Scroll the first match into view (if we didn't land on a hash)
+    if (marks.length > 0 && !location.hash) {
+      marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Fade out after 4 s, then remove the <mark> nodes cleanly
+    setTimeout(function() {
+      marks.forEach(function(m) {
+        m.style.transition = 'background 1.5s, color 1.5s';
+        m.style.background = 'transparent';
+        m.style.color = 'inherit';
+      });
+      setTimeout(function() {
+        marks.forEach(function(m) {
+          if (m.parentNode) {
+            m.parentNode.insertBefore(document.createTextNode(m.textContent), m);
+            m.parentNode.removeChild(m);
+          }
+        });
+      }, 1600);
+    }, 4000);
+  })();
+
+  // ── Inline section nav (only for the active chapter) ──────────────────────
+  (function buildInlineSectionNav() {
+    const article    = document.querySelector('article');
+    const activeLink = document.querySelector('.chapter-list a.active, .subchapter-list a.active');
+    if (!article || !activeLink) return;
+
+    const headings = Array.from(article.querySelectorAll('h2, h3'));
+    if (headings.length < 2) return;
+
+    // Ensure IDs exist (python-markdown toc extension adds these, but just in case)
+    headings.forEach((h, i) => { if (!h.id) h.id = 'sec-' + i; });
+
+    // Build inline <ul> to insert after the active chapter link
+    const ul = document.createElement('ul');
+    ul.className = 'inline-section-nav';
+    ul.innerHTML = headings.map(h => {
+      const cls = h.tagName === 'H3' ? ' class="sec-h3"' : '';
+      return '<li' + cls + '><a class="sec-link" href="#' + h.id + '">' + h.textContent + '</a></li>';
+    }).join('');
+
+    // Insert right inside the active <li>, below the chapter link
+    activeLink.parentElement.appendChild(ul);
+
+    // Scrollspy — highlight current section in the inline nav
+    const links = ul.querySelectorAll('a.sec-link');
+    let activeId = null;
+
+    function setActive(id) {
+      if (id === activeId) return;
+      activeId = id;
+      links.forEach(a => a.classList.toggle('sec-active', a.getAttribute('href') === '#' + id));
+      // Scroll the active link into view within the sidebar
+      const activeA = ul.querySelector('a.sec-active');
+      if (activeA) activeA.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '0px 0px -65% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+
+    // Scroll fallback
+    let t;
+    window.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        let cur = headings[0];
+        headings.forEach(h => { if (h.getBoundingClientRect().top <= 80) cur = h; });
+        if (cur) setActive(cur.id);
+      }, 50);
+    }, { passive: true });
+  })();
+
+})();
+</script>
+</body>
+</html>
